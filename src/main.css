@@ -1,0 +1,40 @@
+/* Fonts */
+@import './assets/fonts.css';
+
+/* Elements */
+@import './elements/button/index.css';
+@import './elements/burgerMenu/index.css';
+
+/* Containers */
+@import './containers/wrapper.css';
+
+/* Components */
+@import './components/nav/index.css';
+@import './components/header/index.css';
+@import './components/firstSection/index.css';
+
+/* Common styles */
+@import './commonStyles/block/--block/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; /* toro warn in terminal!!! */
+
+body {
+    /* @apply text */
+}
+
+.block--hover {
+    @apply hover:opacity-70 focus-visible:opacity-80 active:opacity-50 cursor-pointer;
+}
+
+.block--normalize_height_relative_to_header {
+    height: calc(100vh - var(--height_header)); /* todo resolve height of first_section */
+
+}
+
+@media (min-width: 768px) {
+    .block--normalize_height_relative_to_header {
+        height: calc(100vh - var(--height_header_lg));
+    }
+}

@@ -1,0 +1,55 @@
+:root {
+    --height_header: 84px;
+    --height_header_lg: 88px;
+}
+
+.header {
+    /* todo resolve height of first_section */
+    /*! variable --height_header */
+    @apply sticky z-50 top-0 py-5 bg-tertiary-100
+}
+
+.header__body {
+    @apply flex justify-between
+}
+
+.header_phone {
+    @apply p-3 border-2 border-[transparent] rounded-xl
+}
+.header_phone:hover, .header_phone:focus-visible {
+    @apply border-quinary-100
+}
+.header_phone:hover .header_phone__svg--show_when_hover, .header_phone:focus-visible .header_phone__svg--show_when_hover {
+    display: block;
+}
+.header_phone:hover .header_phone__svg--hidden_when_hover, .header_phone:focus-visible .header_phone__svg--hidden_when_hover {
+    display: none;
+}
+
+.header_phone__svg {
+    @apply h-3 md:h-3.5 fill-primary-100
+}
+
+.header_phone__svg path {
+    @apply fill-primary-100
+}
+
+.header_phone__svg--show_when_hover {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header__logo {
+        order: 1;
+    }
+    .header_phone {
+        order: 3;
+    }
+
+    .header__last_block {
+        order: 2;
+    }
+    #burger_menu {
+        display: none;
+    }
+}

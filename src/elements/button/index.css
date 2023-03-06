@@ -1,0 +1,9 @@
+.button {
+    padding: 22px 65px 22px 65px;
+
+    @apply m-0 bg-quinary-100 rounded-xl self-center
+}
+
+.button__text {
+    @apply text-xs text-primary-100 font-medium
+}

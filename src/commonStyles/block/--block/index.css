@@ -1,0 +1,23 @@
+.block--center_margin {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.block--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.block--center_vertical {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.block--center_horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

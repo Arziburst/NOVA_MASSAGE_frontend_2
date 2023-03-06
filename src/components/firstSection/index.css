@@ -1,17 +1,23 @@
 .first_section {
-    @apply py-5 bg-tertiary-100
+    @apply pb-5 bg-tertiary-100
 }
 
 .first_section__title {
-    @apply relative z-[1] text-[40px] md:text-[84px] leading-[112%] font-playfairDisplay text-primary-100 text-center md:text-left
+    @apply relative z-[1] text-[40px] md:text-[60px] xl:text-[84px] leading-[112%] font-playfairDisplay text-primary-100 text-center xl:text-left
 }
 
 .first_section__title:after {
     @apply content-[""] h-[60px] w-[60px] bg-secondary absolute top-0 left-1/2 translate-y-[-25%] translate-x-10 rounded-full opacity-50 z-[-1]
+    md:h-[100px] md:w-[100px] 
+    xl:left-[220px] xl:translate-y-[-10%]
+}
+
+.first_section__title_second {
+    @apply text-4xl md:text-[58px] xl:text-[80px]
 }
 
 .first_section__card {
-    @apply self-center pr-12 pt-2.5 relative bg-tertiary-200 rounded-xl z-[0]
+    @apply justify-self-center pr-12 pt-2.5 relative bg-tertiary-200 rounded-xl z-[0]
 }
 .first_section__card:after {
     /* todo */
@@ -29,16 +35,53 @@
 }
 
 .first_section__text {
-    @apply text-sm font-normal font-mabryPro text-quaternary-400
+    @apply justify-self-center text-sm font-normal font-mabryPro text-quaternary-400
 }
 
 .first_section_wrapper {
-    /* height: inherit; */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    /* grid-template-areas: ""; */
 }
 
 
-@media (max-width: 768px) {
+@media (min-width: 374px) and (max-width: 639px) and (max-height: 770px) {
+    .first_section_wrapper {
+        grid-template-rows: repeat(2, auto) 40vh repeat(2, auto);
+        gap: 10px;
+    }
+    .first_section__cycle:before {
+        @apply h-[20vw] w-[20vw]
+    }
+}
+@media (min-width: 374px) and (max-width: 639px) and (max-height: 810px) {
+    .first_section_wrapper {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 639px) and (max-width: 1279px) and (max-height: 750px) {
+    .first_section__title {
+        @apply text-[50px]
+    }
+    .first_section__title_second {
+        @apply text-[48px]
+    }
+    .first_section_wrapper {
+        grid-template-rows: repeat(2, auto) 36vh repeat(2, auto);
+        gap: 10px;
+    }
+}
+@media (min-width: 639px) and (max-width: 1279px) and (max-height: 860px) {
+    .first_section_wrapper {
+        grid-template-rows: repeat(2, auto) 40vh repeat(2, auto);
+    }
+}
+
+/* @media (max-width: 1279px) {
     .first_section_wrapper {
         @apply flex flex-col justify-around
     }
-}
+} */

@@ -29,12 +29,11 @@ body {
 }
 
 .block--normalize_height_relative_to_header {
-    height: calc(100vh - var(--height_header)); /* todo resolve height of first_section */
-
+    min-height: calc(100vh - var(--height_header));
 }
 
 @media (min-width: 768px) {
     .block--normalize_height_relative_to_header {
-        height: calc(100vh - var(--height_header_lg));
+        min-height: calc(100vh - var(--height_header_lg));
     }
 }

@@ -25,10 +25,11 @@ export const changeHeightFirstSection = () => {
             // alert('innerHeight < 640');
             photoMasterOfFirstSection.style.height =  'calc(100vh - var(--height_header) - 20px)';
             firstSection.style.minHeight =  'auto';
-        } else {
+        } else if (mql.matches === true && window.innerWidth < 1280) {
+            //  todo check !!!!!!!!!!!!!!!!
             // alert('else');
             photoMasterOfFirstSection.style.height =  'auto';
-            firstSectionWrapper.style.gap = '0px !important';
+            // firstSectionWrapper.style.gap = '0px !important';
         }
 
         firstSection.style.minHeight =  `${window.innerHeight - header.clientHeight}px`;

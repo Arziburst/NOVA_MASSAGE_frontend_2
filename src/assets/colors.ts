@@ -1,4 +1,4 @@
-// import { Config } from 'tailwindcss'; // todo take types of colors
+// import { Config } from 'tailwindcss'; // todo take types of colors ???? need ????
 
 export const colors = {
     primary: {

@@ -20,19 +20,16 @@ export const handleButtonBurgerMenu = () => {
 
 buttonBurgerMenuIcon?.addEventListener('click', handleButtonBurgerMenu);
 
-// window.addEventListener('scroll', () => {
-//     let posTop = window.pageYOffset;
-//     console.log('window.addEventListener => posTop:', posTop);
-// });
 window.addEventListener('scroll', () => {
-    if (header && !header.classList.contains('header--fixed')) {
+    if (header) {
         let posTop = window.pageYOffset;
-        console.log('window.addEventListener => posTop:', posTop);
-        if (posTop > 200) {
+        if (!header.classList.contains('header--fixed') && posTop > 200) {
             header.classList.add('header--fixed');
+
+            return;
         }
-        // setTimeout(() => {
-        //     header.classList.add('header--fixed');
-        // }, 1000);
+        if (posTop < 1) {
+            header.classList.remove('header--fixed');
+        }
     }
 });

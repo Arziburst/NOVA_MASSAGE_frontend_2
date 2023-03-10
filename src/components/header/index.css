@@ -4,10 +4,16 @@
 }
 
 .header {
-    /* todo resolve height of first_section */
-    /*! variable --height_header */
     /* @apply sticky z-50 top-0 py-5 bg-tertiary-100 */
     @apply z-50 top-0 py-5 bg-tertiary-100;
+    transition: top 1s;
+    top: -100px;
+}
+
+.header--fixed {
+    top: 0;
+    position: sticky;
+    width: 100%;
 }
 
 .header__body {

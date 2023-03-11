@@ -12,16 +12,19 @@
 @import './components/nav/index.css';
 @import './components/header/index.css';
 @import './components/firstSection/index.css';
+@import './components/secondSection/index.css';
+@import './components/slider/index.css';
 
 /* Common styles */
 @import './commonStyles/block/--block/index.css';
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities; /* toro warn in terminal!!! */
+@tailwind utilities; /* todo warn in terminal!!! */
 
 body {
-    /* @apply text */
+    /* background: linear-gradient(180deg, theme('colors.tertiary.100') 9.38%, theme('colors.quaternary.100') 34.38%); */
+    background: linear-gradient(180deg, #f1fafd 9.38%, #ffffff 34.38%);
 }
 
 .block--hover {

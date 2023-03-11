@@ -1,3 +1,7 @@
 .wrapper {
-    @apply mx-auto max-w-[2000px] px-4 md:px-[68px]
+    @apply mx-auto max-w-[2000px] px-4 md:px-[68px];
+}
+.wrapper--padding-y {
+    @apply py-24
+    xl:py-40;
 }

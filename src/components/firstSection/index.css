@@ -3,7 +3,7 @@
 }
 
 .first_section {
-    @apply flex bg-tertiary-100;
+    @apply flex; /* bg-tertiary-100; */
     padding-bottom: var(--first_section_padding_bottom);
 }
 

@@ -1,0 +1,12 @@
+.second_section {
+}
+
+.second_section_wrapper {
+    @apply flex flex-col gap-8
+    /* xl:gap-; todo ???? */;
+}
+
+.second_section__text {
+    @apply text-[22px] leading-[30px] font-normal font-mabryPro text-primary-200
+    xl:text-[32px] xl:leading-[44px];
+}

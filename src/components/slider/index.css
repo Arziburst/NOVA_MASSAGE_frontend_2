@@ -1,0 +1,30 @@
+.slider {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider_first_card {
+    @apply rounded-xl bg-secondary-100/30;
+    transform: rotate(5deg);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.slider_second_card {
+    @apply rounded-xl overflow-hidden;
+    transform: rotate(-5deg);
+}
+
+.slider__img {
+    min-height: 200px;
+    height: calc(100vw - 32px);
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+.slider_button {
+}
+.slider_button__text {
+}
+.slider_button__arrow {
+}

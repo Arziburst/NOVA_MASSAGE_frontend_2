@@ -14,6 +14,7 @@ const currentSlide: HTMLElementTyped = document.querySelector('#current_slide');
 const slideLength: HTMLElementTyped = document.querySelector('#slide_length');
 
 const viewSlide: HTMLElementTyped = document.querySelector('#view_slide');
+const viewSlideImg: HTMLImageElement | null = document.querySelector('.view_slide__img');
 
 
 const storeSlider = {
@@ -36,10 +37,6 @@ const overwriteNewSlideLength = () => {
 
 overwriteNewSlideLength();
 
-const onClickSlide = () => {
-    const windowInnerHeight =  window.innerHeight;
-};
-
 export const handleButtonOfSlider = () => {
     storeSlider.number += 1;
     if (storeSlider.number > storeSlider.images.length - 1) {
@@ -56,8 +53,9 @@ export const handleButtonOfSlider = () => {
 };
 
 imgOfSlider?.addEventListener('click', () => {
-    if (viewSlide) {
+    if (viewSlide && viewSlideImg) {
         viewSlide.style.display = 'flex';
+        viewSlideImg.src = imgOfSlider.src;
     }
 });
 

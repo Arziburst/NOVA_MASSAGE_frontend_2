@@ -22,14 +22,13 @@
 }
 
 .second_section_list {
+    @apply list-disc list-inside;
+    list-style-image: url('./assets/images/star.png');
 }
 .second_section_list__item {
-    @apply flex items-center gap-2
+    @apply
     text-[14px] leading-[26px] font-normal font-mabryPro text-primary-100
     xl:text-[18px] xl:leading-[32px]
-}
-.second_section_list__item svg path {
-    @apply fill-primary-100
 }
 
 @media (min-width: 1024px) {

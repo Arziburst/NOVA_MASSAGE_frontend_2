@@ -10,6 +10,10 @@ type HTMLElementTyped = HTMLElement | null;
 const buttonOfSlider: HTMLElementTyped = document.querySelector('.slider_button');
 const imgOfSlider: HTMLImageElement | null = document.querySelector('.slider__img');
 
+const currentSlide: HTMLElementTyped = document.querySelector('#current_slide');
+const slideLength: HTMLElementTyped = document.querySelector('#slide_length');
+
+
 const storeSlider = {
     number: 0,
     images: [
@@ -20,14 +24,26 @@ const storeSlider = {
     ],
 };
 
+const imagesLength = storeSlider.images.length;
+
+const overwriteNewSlideLength = () => {
+    if (slideLength) {
+        slideLength.innerHTML = imagesLength < 9 ? `0${imagesLength}` : `${imagesLength}`;
+    }
+};
+
+overwriteNewSlideLength();
+
 export const handleButtonOfSlider = () => {
     storeSlider.number += 1;
     if (storeSlider.number > storeSlider.images.length - 1) {
         storeSlider.number = 0;
     }
 
-    if (imgOfSlider) {
+    if (imgOfSlider && currentSlide && slideLength) {
         imgOfSlider.src = storeSlider.images[ storeSlider.number ];
+        currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
+        overwriteNewSlideLength();
     }
 
     console.log(storeSlider.number);

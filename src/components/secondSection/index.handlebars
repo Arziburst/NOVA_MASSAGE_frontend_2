@@ -1,12 +1,43 @@
 <section class='second_section'>
-    <div class='wrapper wrapper--padding-y second_section_wrapper'>
-        <p class='second_section__text'>
+    <div class='wrapper wrapper--padding-y wrapper--padding-top second_section_wrapper'>
+        <p class='second_section__primary_text'>
             Мене звуть
             <span class='text-secondary'>Борис</span>, я дипломований спеціаліст
             — “Школи юмейхо-терапії Юрія Пасечника”. Досвід професійної роботи у
             цій галузі –
             <span class='text-secondary'>5 років</span>
         </p>
-        {{> '../slider/index.handlebars'}}
+        <div class="second_section_block_content">
+            {{> '../slider/index.handlebars'}}
+            <div>
+                <p class="second_section__secondary_text">
+                    Юмейхо прийшов до нас із Японії. Це особливий масаж глибоких тканин, а за потреби – з маніпуляцією
+                    суглобів для корекції хребта і тазу. Спеціальна техніка Юмейхо спрямована на:
+                </p>
+                <ul class="second_section_list">
+                    <li class="second_section_list__item">
+                        {{> '../../elements/star/index.handlebars'}}
+                        <p>Покращення роботи центральної та вегетативної нервових систем</p>
+                    </li class="second_section_list__item">
+                    <li class="second_section_list__item">
+                        {{> '../../elements/star/index.handlebars'}}
+                        <p>Поліпшення циркуляції крові</p>
+                    </li>
+                    <li class="second_section_list__item">
+                        {{> '../../elements/star/index.handlebars'}}
+                        <p>А також має загальнооздоровчий характер</p>
+                    </li>
+                </ul>
+                <p class="second_section__secondary_text">
+                    Як результат – зняття болю, покращення рухливості суглобів та постави, зниження напруженості м'язів.
+                    Можна відзначити багато інших приємних ефектів.
+                </p>
+                <p class="second_section__secondary_text">
+                    Масаж виконується на спеціальному столі, спина масажується з використанням лікувальних олій та
+                    кремів,
+                    масаж кінцівок – через одяг.
+                </p>
+            </div>
+        </div>
     </div>
 </section>

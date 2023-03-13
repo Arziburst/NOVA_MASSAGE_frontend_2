@@ -67,7 +67,6 @@
 }
 
 .nav_select__summary svg path {
-    /* fill: ; */
     @apply fill-primary-200;
     /* @apply translate-y-[-0%]; */
 }

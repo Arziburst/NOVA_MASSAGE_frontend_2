@@ -7,7 +7,9 @@ import quaternary_image_of_slider from '../../assets/images/quaternary_image_of_
 // Types
 type HTMLElementTyped = HTMLElement | null;
 
-const buttonOfSlider: HTMLElementTyped = document.querySelector('.slider_button');
+const sliderCard: HTMLElementTyped = document.querySelector('.slider_card');
+
+const buttonOfSlider: HTMLButtonElement | null = document.querySelector('.slider_button');
 const imgOfSlider: HTMLImageElement | null = document.querySelector('.slider__img');
 
 const currentSlide: HTMLElementTyped = document.querySelector('#current_slide');
@@ -38,18 +40,26 @@ const overwriteNewSlideLength = () => {
 overwriteNewSlideLength();
 
 export const handleButtonOfSlider = () => {
-    storeSlider.number += 1;
-    if (storeSlider.number > storeSlider.images.length - 1) {
-        storeSlider.number = 0;
-    }
+    if (buttonOfSlider && sliderCard && !sliderCard.classList.contains('slider_card--animation')) {
+        buttonOfSlider.disabled = true;
+        sliderCard.classList.add('slider_card--animation');
 
-    if (imgOfSlider && currentSlide && slideLength) {
-        imgOfSlider.src = storeSlider.images[ storeSlider.number ];
-        currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
-        overwriteNewSlideLength();
-    }
 
-    console.log(storeSlider.number);
+        setTimeout(() => {
+            storeSlider.number += 1;
+            if (storeSlider.number > storeSlider.images.length - 1) {
+                storeSlider.number = 0;
+            }
+
+            if (imgOfSlider && currentSlide && slideLength) {
+                imgOfSlider.src = storeSlider.images[ storeSlider.number ];
+                currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
+                overwriteNewSlideLength();
+            }
+            sliderCard.classList.remove('slider_card--animation');
+            buttonOfSlider.disabled = false;
+        }, 500);
+    }
 };
 
 imgOfSlider?.addEventListener('click', () => {

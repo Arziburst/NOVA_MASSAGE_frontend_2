@@ -9,6 +9,7 @@ import './elements/burgerMenu/index';
 import './components/firstSection';
 import './components/header';
 import './components/slider';
+import './components/thirdSection';
 
 // Styles
 import './main.css';

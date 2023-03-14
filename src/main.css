@@ -14,6 +14,7 @@
 @import './components/firstSection/index.css';
 @import './components/secondSection/index.css';
 @import './components/slider/index.css';
+@import './components/thirdSection/index.css';
 
 /* Common styles */
 @import './commonStyles/block/--block/index.css';
@@ -21,6 +22,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities; /* todo warn in terminal!!! */
+
+* {
+    scroll-behavior: smooth;
+}
 
 body {
     /* background: linear-gradient(180deg, theme('colors.tertiary.100') 9.38%, theme('colors.quaternary.100') 34.38%); */

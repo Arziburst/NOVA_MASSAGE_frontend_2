@@ -44,7 +44,6 @@ export const handleButtonOfSlider = () => {
         buttonOfSlider.disabled = true;
         sliderCard.classList.add('slider_card--animation');
 
-
         setTimeout(() => {
             storeSlider.number += 1;
             if (storeSlider.number > storeSlider.images.length - 1) {
@@ -58,7 +57,7 @@ export const handleButtonOfSlider = () => {
             }
             sliderCard.classList.remove('slider_card--animation');
             buttonOfSlider.disabled = false;
-        }, 500);
+        }, 500); // time >>> .slider_card::before >>> animation-duration
     }
 };
 

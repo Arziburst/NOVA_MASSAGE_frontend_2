@@ -19,14 +19,11 @@
     height: 100%;
     width: 100%;
     transform: translate(-50%, -50%) rotate(5deg);
-    /* animation-name: var(--slider_card_pseudo_element_name_animation); */
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
 }
 
 .slider_card--animation::before {
     animation-name: animation_background_card;
-    animation-duration: 0.5s;
+    animation-duration: 0.5s; /* ./src/components/slider/index.ts >>> handleButtonOfSlider >>> setTimeout */
     animation-timing-function: linear;
 }
 
@@ -96,7 +93,7 @@
 }
 
 .view_slide__img {
-    height: calc(100vh - 160px);
+    max-height: 90vh;
     max-width: 90vw;
     object-fit: cover;
 }
@@ -106,12 +103,6 @@
     position: absolute;
     top: 30px;
     right: 30px;
-}
-
-@media (min-width: 1300px) {
-    .view_slide__img {
-        height: 90vh;
-    }
 }
 
 @media (min-width: 640px) and (min-height: 700px) {
@@ -141,7 +132,7 @@
     }
 }
 
-@media (max-height: 1024px) and (orientation: landscape) {
+@media (max-height: 640px) and (orientation: landscape) {
     .slider__img {
         max-height: 50vh;
         max-width: 50vh;

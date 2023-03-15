@@ -10,7 +10,8 @@ type HTMLElementTyped = HTMLElement | null;
 const sliderCard: HTMLElementTyped = document.querySelector('.slider_card');
 
 const buttonOfSlider: HTMLButtonElement | null = document.querySelector('.slider_button');
-const imgOfSlider: HTMLImageElement | null = document.querySelector('.slider__img');
+const secondImgOfSlider: HTMLImageElement | null = document.querySelector('.slider__second_img');
+const imgOfSlider: HTMLImageElement | null = document.querySelector('.slider__first_img');
 
 const currentSlide: HTMLElementTyped = document.querySelector('#current_slide');
 const slideLength: HTMLElementTyped = document.querySelector('#slide_length');
@@ -31,31 +32,36 @@ const storeSlider = {
 
 const imagesLength = storeSlider.images.length;
 
-const overwriteNewSlideLength = () => {
+const overwriteNewSlideLengthForButtonSlider = () => {
     if (slideLength) {
         slideLength.innerHTML = imagesLength < 9 ? `0${imagesLength}` : `${imagesLength}`;
     }
 };
 
-overwriteNewSlideLength();
+overwriteNewSlideLengthForButtonSlider();
 
 export const handleButtonOfSlider = () => {
-    if (buttonOfSlider && sliderCard && !sliderCard.classList.contains('slider_card--animation')) {
+    if (imgOfSlider && secondImgOfSlider && buttonOfSlider && sliderCard && !sliderCard.classList.contains('slider_card--animation')) {
         buttonOfSlider.disabled = true;
+
+        storeSlider.number += 1;
+        if (storeSlider.number > storeSlider.images.length - 1) {
+            storeSlider.number = 0;
+        }
+
+        secondImgOfSlider.style.backgroundImage = `url("${storeSlider.images[ storeSlider.number ]}")`;
+
         sliderCard.classList.add('slider_card--animation');
+        imgOfSlider.classList.add('slider__first_img--animation');
 
         setTimeout(() => {
-            storeSlider.number += 1;
-            if (storeSlider.number > storeSlider.images.length - 1) {
-                storeSlider.number = 0;
-            }
-
             if (imgOfSlider && currentSlide && slideLength) {
                 imgOfSlider.src = storeSlider.images[ storeSlider.number ];
                 currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
-                overwriteNewSlideLength();
+                overwriteNewSlideLengthForButtonSlider();
             }
             sliderCard.classList.remove('slider_card--animation');
+            imgOfSlider.classList.remove('slider__first_img--animation');
             buttonOfSlider.disabled = false;
         }, 500); // time >>> .slider_card::before >>> animation-duration
     }

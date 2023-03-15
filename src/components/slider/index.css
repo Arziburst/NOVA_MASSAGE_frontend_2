@@ -36,7 +36,7 @@
     }
 }
 
-.slider__img {
+.slider__first_img {
     @apply rounded-xl;
     min-height: 200px;
     min-width: 200px;
@@ -46,6 +46,28 @@
     max-width: 300px;
     object-fit: cover;
     cursor: pointer;
+}
+
+.slider__first_img--animation {
+    animation-name: slider__first_img--animation;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+@keyframes slider__first_img--animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.slider__second_img {
+    @apply rounded-xl;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .slider_button {
@@ -106,34 +128,34 @@
 }
 
 @media (min-width: 640px) and (min-height: 700px) {
-    .slider__img {
+    .slider__first_img {
         max-height: 450px;
         max-width: 450px;
     }
 }
 
 @media (min-width: 1024px) {
-    .slider__img {
+    .slider__first_img {
         max-height: 400px;
         max-width: 400px;
     }
 }
 @media (min-width: 1280px) and (min-height: 700px) {
-    .slider__img {
+    .slider__first_img {
         max-height: 500px;
         max-width: 500px;
     }
 }
 
 @media (min-width: 1536px) and (min-height: 850px) {
-    .slider__img {
+    .slider__first_img {
         max-height: 600px;
         max-width: 600px;
     }
 }
 
 @media (max-height: 640px) and (orientation: landscape) {
-    .slider__img {
+    .slider__first_img {
         max-height: 50vh;
         max-width: 50vh;
     }

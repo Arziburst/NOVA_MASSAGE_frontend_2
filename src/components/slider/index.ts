@@ -53,17 +53,6 @@ export const handleButtonOfSlider = () => {
 
         sliderCard.classList.add('slider_card--animation');
         imgOfSlider.classList.add('slider__first_img--animation');
-
-        setTimeout(() => {
-            if (imgOfSlider && currentSlide && slideLength) {
-                imgOfSlider.src = storeSlider.images[ storeSlider.number ];
-                currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
-                overwriteNewSlideLengthForButtonSlider();
-            }
-            sliderCard.classList.remove('slider_card--animation');
-            imgOfSlider.classList.remove('slider__first_img--animation');
-            buttonOfSlider.disabled = false;
-        }, 500); // time >>> .slider_card::before >>> animation-duration
     }
 };
 
@@ -81,3 +70,18 @@ viewSlide?.addEventListener('click', () => {
 });
 
 buttonOfSlider?.addEventListener('click', handleButtonOfSlider);
+
+sliderCard?.addEventListener('animationend', () => {
+    if (imgOfSlider && currentSlide && slideLength && buttonOfSlider) {
+        imgOfSlider.src = storeSlider.images[ storeSlider.number ];
+
+        currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
+
+        overwriteNewSlideLengthForButtonSlider();
+
+        imgOfSlider.classList.remove('slider__first_img--animation');
+        sliderCard.classList.remove('slider_card--animation');
+
+        buttonOfSlider.disabled = false;
+    }
+});

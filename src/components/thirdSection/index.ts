@@ -5,17 +5,28 @@ const thirdSectionWrapper: HTMLElementTyped = document.querySelector('.third_sec
 
 const thirdSectionFirstBlock: HTMLElementTyped = document.querySelector('.third_section_first_block');
 const thirdSectionSecondBlock: HTMLElementTyped = document.querySelector('.third_section_second_block');
+const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 
-// todo make orientation like first section  !!!!!!!!
+let turnOver: boolean | null = null;
 
-export const variable = () => {
-    if (thirdSectionWrapper && thirdSectionFirstBlock && thirdSectionSecondBlock) {
+export const changeHightParallax = () => {
+    if (
+        thirdSectionWrapper
+        && thirdSectionFirstBlock
+        && thirdSectionSecondBlock
+        && turnOver !== mql.matches
+    ) {
+        turnOver = mql.matches;
+
+        thirdSectionFirstBlock.style.height = 'auto';
+        thirdSectionSecondBlock.style.height = 'auto';
+
         const thirdSectionWrapperHeight = thirdSectionWrapper.clientHeight;
-        console.log('variable => thirdSectionWrapperHeight:', thirdSectionWrapperHeight);
 
         thirdSectionFirstBlock.style.height = (thirdSectionWrapperHeight / 2) + thirdSectionFirstBlock.clientHeight + 'px';
         thirdSectionSecondBlock.style.height = (thirdSectionWrapperHeight / 2) + thirdSectionSecondBlock.clientHeight + 'px';
     }
 };
 
-window.addEventListener('DOMContentLoaded', variable);
+window.addEventListener('DOMContentLoaded', changeHightParallax);
+window.addEventListener('resize', changeHightParallax);

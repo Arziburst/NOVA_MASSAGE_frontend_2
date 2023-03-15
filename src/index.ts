@@ -6,10 +6,10 @@ import './assets/images/photo_master.png';
 import './elements/burgerMenu/index';
 
 // Components
-import './components/firstSection';
+import './sections/first';
 import './components/header';
 import './components/slider';
-import './components/thirdSection';
+import './sections/third';
 
 // Styles
 import './main.css';

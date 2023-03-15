@@ -1,0 +1,5 @@
+.block__title {
+    @apply mb-[32px] text-[22px] font-normal font-mabryPro text-primary-200
+    sm:text-[38px]
+    lg:text-[48px];
+}

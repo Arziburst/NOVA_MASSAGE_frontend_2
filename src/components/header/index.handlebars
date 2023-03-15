@@ -2,10 +2,9 @@
     <div class="wrapper">
         <div class="header__body">
             <div class="header__logo block--center">
-                {{> '../../elements/logo/index.handlebars'}}
+                {{> '../../elements/logo/index'}}
             </div>
             <a href='tel:+38096-170-5376' class="header_phone block--center gap-1.5">
-                {{!-- {{> '../../elements/phone/index.handlebars'}} --}}
                 <svg class="header_phone__svg header_phone__svg--hidden_when_hover" width="14" height="14"
                     viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -24,13 +23,13 @@
                 </p>
             </a>
             <div class="block--center header__last_block">
-                {{> '../../elements/burgerMenu/index.handlebars'}}
-                {{> '../nav/index.handlebars'}}
+                {{> '../../elements/burgerMenu/index'}}
+                {{> '../nav/index'}}
             </div>
         </div>
 
         <div class="burger_menu__dropdown">
-            {{> '../nav/index.handlebars' class='nav_mobile block'}}
+            {{> '../nav/index' class='nav_mobile block'}}
             <div>
                 <div class="flex flex-wrap justify-between gap-2.5 max-w-[250px] ml-auto mr-auto">
                     <button class="button burger_menu__button block--hover rounded-md burger_menu__button--active">
@@ -59,11 +58,11 @@
                 <div class="flex justify-between block--center_margin max-w-[110px]">
                     <a href="https://telegram.me/+380961705376">
                         <span class="sr-only">Іконка Телеграма</span>
-                        {{> '../../elements/svgTelegram/index.handlebars'}}
+                        {{> '../../elements/svgTelegram/index'}}
                     </a>
                     <a href="viber://chat?number=380961705376">
                         <span class="sr-only">Іконка Вайбера</span>
-                        {{> '../../elements/svgViber/index.handlebars'}}
+                        {{> '../../elements/svgViber/index'}}
                     </a>
                 </div>
             </div>

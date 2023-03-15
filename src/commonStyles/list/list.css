@@ -1,0 +1,4 @@
+.list {
+    @apply list-disc list-inside;
+    list-style-image: url('./assets/images/star.png');
+}

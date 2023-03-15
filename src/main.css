@@ -11,13 +11,18 @@
 /* Components */
 @import './components/nav/index.css';
 @import './components/header/index.css';
-@import './components/firstSection/index.css';
-@import './components/secondSection/index.css';
 @import './components/slider/index.css';
-@import './components/thirdSection/index.css';
+
+/* Sections */
+@import './sections/first/index.css';
+@import './sections/second/index.css';
+@import './sections/third/index.css';
+@import './sections/fourth/index.css';
 
 /* Common styles */
-@import './commonStyles/block/--block/index.css';
+@import './commonStyles/block/__title/block__title.css';
+@import './commonStyles/block/--block/block--block.css';
+@import './commonStyles/list/list.css';
 
 @tailwind base;
 @tailwind components;
@@ -29,7 +34,11 @@
 
 body {
     /* background: linear-gradient(180deg, theme('colors.tertiary.100') 9.38%, theme('colors.quaternary.100') 34.38%); */
-    background: linear-gradient(180deg, #f1fafd 9.38%, #ffffff 34.38%);
+    background: linear-gradient(
+        180deg,
+        theme('colors.tertiary.100') 9.38%,
+        #ffffff 34.38%
+    );
 }
 
 .block--hover {

@@ -2,10 +2,10 @@
     @apply mx-auto max-w-[2000px] px-4 md:px-[68px];
 }
 .wrapper--padding-y {
-    @apply py-12
+    @apply py-12;
 }
 .wrapper--padding-top {
-    @apply pt-24
+    @apply pt-24;
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {

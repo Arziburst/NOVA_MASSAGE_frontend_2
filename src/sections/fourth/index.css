@@ -1,0 +1,86 @@
+.fourth_section {
+}
+
+.fourth_section_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fourth_section_cards {
+    @apply w-full flex flex-col gap-14 
+    max-lg:items-center
+    lg:flex-row lg:justify-around;
+}
+
+.fourth_section_card {
+    @apply max-w-[600px] px-5 py-2.5 flex flex-col gap-[20px] border-2 border-quinary-100 rounded-xl
+    sm:gap-[26px]
+    lg:gap-[36px] lg:px-12 lg:py-6;
+}
+.fourth_section_second_card {
+    @apply relative border-0 bg-tertiary-100;
+}
+.fourth_section_second_card::after {
+    @apply content-[""] h-full w-full border-2 border-quinary-100 rounded-xl;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(1deg) translate(-50%, -50%);
+    /* z-index: -1; */
+}
+
+.fourth_section_card__circle {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    background: linear-gradient(
+        135deg,
+        theme('colors.primary.100') 50%,
+        theme('colors.secondary.100') 50%
+    );
+    opacity: 0.5;
+}
+
+.fourth_section_card__circle--full {
+    /* @apply bg-primary-100; */
+    background: theme('colors.primary.100');
+}
+
+.fourth_section_card__title {
+    @apply text-center text-2xl font-normal font-playfairDisplay text-primary-200;
+}
+
+.fourth_section_card_body {
+    flex-grow: 3;
+    flex-shrink: 3;
+}
+
+.fourth_section_card__text {
+    @apply mb-[12px] text-[14px] leading-[26px] font-normal font-mabryPro
+    md:text-[16px]
+    lg:text-[18px];
+}
+
+.fourth_section_card_list {
+}
+
+.fourth_section_card_list__item {
+    @apply text-primary-200;
+}
+
+.fourth_section_card_footer {
+    @apply flex gap-2.5 justify-center items-center
+    lg:justify-start;
+}
+
+.fourth_section_card_footer__currency {
+    /* todo font "GT Super Display" !!!!!!!!!! */
+    @apply text-[24px] font-normal font-mabryPro text-secondary
+    lg:text-[32px];
+}
+.fourth_section_card_footer__number {
+    @apply text-[32px] font-normal font-mabryPro text-primary-200
+    lg:text-[48px];
+}

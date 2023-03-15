@@ -17,11 +17,6 @@ module.exports = {
             lg:   '1.25rem', // 20px
             xl:   '3rem', // 48px
             full: '9999px', // native from tailwindcss
-            // none: '0px', // native from tailwindcss
-            // sm:   '0.75rem', // 12px
-            // md:   '1.25rem', // 20px
-            // lg:   '3rem', // 48px
-            // full: '9999px', // native from tailwindcss
         },
         extend: {
             // wrapper: {

@@ -12,12 +12,14 @@
 @import './components/nav/index.css';
 @import './components/header/index.css';
 @import './components/slider/index.css';
+@import './components/input/index.css';
 
 /* Sections */
 @import './sections/first/index.css';
 @import './sections/second/index.css';
 @import './sections/third/index.css';
 @import './sections/fourth/index.css';
+@import './sections/fifth/index.css';
 
 /* Common styles */
 @import './commonStyles/block/__title/block__title.css';

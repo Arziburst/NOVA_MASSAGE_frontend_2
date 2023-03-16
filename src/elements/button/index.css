@@ -1,5 +1,5 @@
 .button {
-    padding: 22px 76px;
+    padding: 20px 30px;
     @apply m-0 bg-quinary-100 rounded-xl self-center;
 }
 
@@ -18,4 +18,26 @@ button:focus-visible .button__text {
 
 .button:active {
     @apply opacity-75;
+}
+
+.button_scroll {
+    @apply relative overflow-hidden text-center;
+}
+
+.button_scroll_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -18%);
+    width: 100%;
+}
+
+.button_scroll_text {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    transition: transform 0.3s;
+}
+.button_scroll:hover .button_scroll_text {
+    transform: translateY(-70%);
 }

@@ -37,11 +37,10 @@
 }
 
 .input__textarea {
-    @apply w-full pl-[20px] pr-[40px] py-[14px]
+    @apply h-[150px] w-full pl-[20px] pr-[40px] py-[14px]
     border-2 border-quinary-100 rounded-lg
     text-sm font-normal font-mabryPro text-primary-200
     focus:outline-none focus:border-quinary-200 
-    lg:text-base;
-    height: 150px;
+    lg:text-base lg:h-[180px];
     resize: none;
 }

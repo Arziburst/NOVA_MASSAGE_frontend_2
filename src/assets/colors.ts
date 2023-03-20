@@ -1,5 +1,3 @@
-// import { Config } from 'tailwindcss'; // todo take types of colors ???? need ????
-
 export const colors = {
     primary: {
         100: '#3152C7',

@@ -33,6 +33,24 @@
     @apply lg:justify-self-end;
     grid-area: fifth_section_body_second_1;
 }
+.fifth_section_body_second_1--animation {
+    @apply max-h-[150px];
+}
+.fifth_section_body_second_1--animation:hover {
+    animation: bounce2 1s infinite;
+}
+@keyframes bounce2 {
+    50% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    0%,
+    100% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
 .fifth_section_body_second_2 {
     grid-area: fifth_section_body_second_2;
 }

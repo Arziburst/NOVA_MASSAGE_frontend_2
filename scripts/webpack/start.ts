@@ -26,7 +26,8 @@ const compiler = webpack(getDevConfig());
         }
 
         const server = new DevServer({
-            host:               HOST,
+            // host:               HOST,
+            host:               '0.0.0.0',
             port:               choosenPort,
             historyApiFallback: true,
             hot:                false,

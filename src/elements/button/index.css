@@ -35,7 +35,7 @@ button:focus-visible .button__text {
 .button_scroll_text {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 26px;
     transition: transform 0.3s;
 }
 .button_scroll:hover .button_scroll_text {

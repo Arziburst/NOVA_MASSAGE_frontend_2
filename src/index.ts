@@ -1,7 +1,7 @@
 
 // Images
 import './assets/images/photo_master.png';
-import './assets/images/map.jpg';
+import './assets/images/map.png';
 
 // Functions
 import './elements/burgerMenu/index';

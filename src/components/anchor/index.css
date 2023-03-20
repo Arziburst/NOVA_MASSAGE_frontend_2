@@ -1,0 +1,10 @@
+.anchor_section {
+    position: absolute;
+    top: calc(var(--height_header) * -1);
+}
+
+@media (min-width: 768px) {
+    .anchor_section {
+        top: calc(var(--height_header_lg) * -1);
+    }
+}

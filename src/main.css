@@ -13,6 +13,7 @@
 @import './components/header/index.css';
 @import './components/slider/index.css';
 @import './components/input/index.css';
+@import './components/anchor/index.css';
 
 /* Sections */
 @import './sections/first/index.css';
@@ -35,7 +36,6 @@
 }
 
 body {
-    /* background: linear-gradient(180deg, theme('colors.tertiary.100') 9.38%, theme('colors.quaternary.100') 34.38%); */
     background: linear-gradient(
         180deg,
         theme('colors.tertiary.100') 9.38%,

@@ -3,6 +3,8 @@ type HTMLElementTyped = HTMLElement | null;
 
 const header: HTMLElementTyped = document.querySelector('.header');
 const buttonBurgerMenuIcon: HTMLElementTyped = document.querySelector('#burger_menu__icon');
+const navDropdown = document.querySelector('.burger_menu__dropdown');
+
 
 export const handleButtonBurgerMenu = () => {
     if (!(buttonBurgerMenuIcon && header)) {
@@ -14,15 +16,20 @@ export const handleButtonBurgerMenu = () => {
     } else {
         header.classList.remove('header--fixed');
     }
-
-    console.log('text');
 };
 
 buttonBurgerMenuIcon?.addEventListener('click', handleButtonBurgerMenu);
 
 window.addEventListener('scroll', () => {
-    if (header) {
+    if (header && navDropdown) {
         let posTop = window.pageYOffset;
+
+        if (navDropdown.classList.contains('burger_menu__dropdown--open')) {
+            header.classList.add('header--fixed');
+
+            return;
+        }
+
         if (!header.classList.contains('header--fixed') && posTop > 200) {
             header.classList.add('header--fixed');
 

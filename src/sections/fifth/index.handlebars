@@ -1,4 +1,5 @@
 <section class="fifth_section wrapper--padding-y">
+    {{> '../../components/anchor/index' id='contact'}}
     <div class="wrapper fifth_section_wrapper">
         <h4 class="block__title self-start">
             Записатись<span class="text-secondary">!</span>
@@ -39,52 +40,67 @@
                     </div>
                 </button>
             </form>
-            <div class="flex flex-col gap-[30px] justify-between lg:w-1/2">
-                <div class="self-center lg:self-end">
-                    {{> '../../elements/decorElementsForTouching/index' class='max-h-[150px]'}}
+            <div class="fifth_section_body_second contact">
+                <div class="fifth_section_body_second_1">
+                    {{> '../../elements/decorElementsForTouching/index' class='max-h-[150px] hover:animate-bounce'}}
                 </div>
-                <address class="address">
-                    <div class="address_layout">
-                        <div class="address_item">
-                            <h5 class="address__title">
-                                телефон
-                            </h5>
-                            <div class="address_body">
-                                <p class="address_body__text">+38 (096) 170 53 76</p>
-                                <p class="address_body__text">+38 (050) 687 76 85</p>
+                <div class="contact_info fifth_section_body_second_2">
+                    <div class="contact_item">
+                        <h5 class="contact__title">
+                            телефон
+                        </h5>
+                        <div class="contact_info_body">
+                            <div>
+                                <a href="tel:+380961705376"
+                                    class="contact_info_body__text contact_info_body__text--hover">+38 (096) 170 53
+                                    76</a>
                             </div>
-                        </div>
-                        <div class="address_item">
-                            <h5 class="address__title">
-                                e-mail
-                            </h5>
-                            <div class="address_body">
-                                <p class="address_body__text">borisbortnikov@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="address_item">
-                            <h5 class="address__title">
-                                Адреса
-                            </h5>
-                            <div class="address_body">
-                                <p class="address_body__text">Київ (десять хвилин від метро Позняки)</p>
+                            <div>
+                                <a href="tel:+380506877685"
+                                    class="contact_info_body__text contact_info_body__text--hover">+38 (050) 687 76
+                                    85</a>
                             </div>
                         </div>
                     </div>
-                    <div class="address_item">
-                        <div>
-                            <h5 class="address__title">
-                                Локація
-                            </h5>
+                    <div class="contact_item">
+                        <h5 class="contact__title">
+                            e-mail
+                        </h5>
+                        <div class="contact_info_body">
+                            <div>
+                                <a href="mailto:borisbortnikov@gmail.com"
+                                    class="contact_info_body__text contact_info_body__text--hover">borisbortnikov@gmail.com</a>
+                            </div>
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=50.39837929264725,30.634371072554035"
-                            target="_blank" class="w-full rounded-lg max-h-[300px]">
-                            <img class="address__img" src="assets/map.jpg" alt="Малюнок, де знаходиться майстер">
-                        </a>
                     </div>
-                </address>
-                <div>
+                    <div class="contact_item">
+                        <h5 class="contact__title">
+                            Адреса
+                        </h5>
+                        <div class="contact_info_body">
+                            <div>
+                                <p class="contact_info_body__text contact_info_body__text--hover">
+                                    Київ (десять хвилин від метро Позняки)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fifth_section_body_second_3">
                     {{> '../../components/socialNetworks/index' class='max-sm:justify-center'}}
+                </div>
+                <div class="contact_locate contact_item fifth_section_body_second_4">
+
+                    <h5 class="contact__title">
+                        Локація
+                    </h5>
+
+                    <button class="contact_locate_map">
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="contact_locate_map__img" src="assets/map.png"
+                                alt="Малюнок, де знаходиться майстер">
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>

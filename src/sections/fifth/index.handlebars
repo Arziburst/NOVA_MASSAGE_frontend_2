@@ -1,46 +1,60 @@
 <section class="fifth_section wrapper--padding-y">
-    {{> '../../components/anchor/index' id='contact'}}
+    {{> '../../components/anchor/index' id='anchor_form'}}
     <div class="wrapper fifth_section_wrapper">
         <h4 class="block__title self-start">
             Записатись<span class="text-secondary">!</span>
         </h4>
         <div class="fifth_section_body">
-            <form class="form">
-                {{> '../../components/input/index' id='input_name' label='Як до Вас
-                звертатіся?' type='text'
+            <form id="form" class="form">
+                {{> '../../components/input/index' id='input_name' name='name' label='Як до Вас
+                звертатіся?' type='text' props='required'
                 placeholder='Введіть своє повне ім’я'}}
-                {{> '../../components/input/index' id='input_phone' label='Ваш номер телефону?'
-                type='text'
+                {{> '../../components/input/index' id='input_phone' name='phone' label='Ваш номер телефону?'
+                type='text' props='required'
                 placeholder='+11 222 333 44 44'}}
                 <div class="input">
                     <label class="input__label" for="input_description">
                         Поставте запитання або оформіть заявку
                     </label>
                     <div class="input_wrapper">
-                        <textarea class="input__textarea" id="input_description"
+                        <textarea class="input__textarea" id="input_description" name="question"
                             placeholder="Тут Ви можете залишити запитання чи коментар"></textarea>
-                        <button class="input_button top-[20px] right-[20px]">
+                        <button class="input_button hidden top-[20px] right-[20px]">
                             {{> '../../elements/svgClose/index' class='input_button__close'}}
                         </button>
                     </div>
                 </div>
-                <button class='button button_scroll lg:self-start'>
+                <button id='button_submit' type='submit'
+                    class='button button_scroll relative bg-quinary-100 lg:self-start'>
                     <span class='button__text invisible'>
                         відправити повідомлення
                     </span>
-                    <div class='button_scroll_wrapper'>
-                        <div class='button_scroll_text'>
+                    <span class='button_scroll_wrapper'>
+                        <span class='button_scroll_text'>
                             <span class='button__text' aria-hidden='true'>
                                 відправити повідомлення
                             </span>
                             <span class='button__text' aria-hidden='true'>
                                 відправити повідомлення
                             </span>
-                        </div>
-                    </div>
+                        </span>
+                    </span>
+                    <span id="spinner_form" class="spinner_form hidden">
+                        {{> '../../elements/spinner/index' class='animate-spin h-[40px]'}}
+                    </span>
                 </button>
+                <div class="form_area hidden">
+                    <img class="form_area__img" src="assets/successful_request.png" alt="Зображення успіху">
+                    <span class="form_area__title">
+                        Вашу заявку було прийнято в обробку, ми зв'яжемося з вами найближчим часом
+                    </span>
+                    <span class="form_area__text">
+                        До відправки нової заявки залишилось: <span id="form_area__time"></span>
+                    </span>
+                </div>
             </form>
             <div class="fifth_section_body_second contact">
+                {{> '../../components/anchor/index' id='anchor_contact'}}
                 <div class="fifth_section_body_second_1">
                     {{> '../../elements/decorElementsForTouching/index' class='fifth_section_body_second_1--animation'}}
                 </div>
@@ -52,13 +66,15 @@
                         <div class="contact_info_body">
                             <div>
                                 <a href="tel:+380961705376"
-                                    class="contact_info_body__text contact_info_body__text--hover">+38 (096) 170 53
-                                    76</a>
+                                    class="contact_info_body__text contact_info_body__text--hover">
+                                    +38 (096) 170 53 76
+                                </a>
                             </div>
                             <div>
                                 <a href="tel:+380506877685"
-                                    class="contact_info_body__text contact_info_body__text--hover">+38 (050) 687 76
-                                    85</a>
+                                    class="contact_info_body__text contact_info_body__text--hover">
+                                    +38 (050) 687 76 85
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -69,7 +85,9 @@
                         <div class="contact_info_body">
                             <div>
                                 <a href="mailto:borisbortnikov@gmail.com"
-                                    class="contact_info_body__text contact_info_body__text--hover">borisbortnikov@gmail.com</a>
+                                    class="contact_info_body__text break-all contact_info_body__text--hover">
+                                    borisbortnikov@gmail.com
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -96,10 +114,10 @@
                     </h5>
 
                     <button class="contact_locate_map">
-                        <div class="overflow-hidden rounded-lg">
+                        <span class="overflow-hidden rounded-lg">
                             <img class="contact_locate_map__img" src="assets/map.png"
                                 alt="Малюнок, де знаходиться майстер">
-                        </div>
+                        </span>
                     </button>
                 </div>
             </div>

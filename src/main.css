@@ -21,6 +21,7 @@
 @import './sections/third/index.css';
 @import './sections/fourth/index.css';
 @import './sections/fifth/index.css';
+@import './sections/footer/index.css';
 
 /* Common styles */
 @import './commonStyles/block/__title/block__title.css';

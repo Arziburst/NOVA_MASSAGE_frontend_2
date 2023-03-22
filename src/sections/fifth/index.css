@@ -10,8 +10,49 @@
 }
 
 .form {
-    @apply flex flex-col gap-6
+    @apply relative flex flex-col gap-6
     lg:gap-8 lg:w-1/2;
+}
+
+.form_area {
+    height: 100%;
+    width: 101%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_area__img {
+}
+.form_area__title {
+    @apply text-center text-2xl font-normal font-mabryPro text-primary-300;
+}
+.form_area__text {
+    @apply text-center text-sm font-normal font-mabryPro text-primary-200;
+}
+
+#button_submit {
+    @apply relative;
+}
+
+.spinner_form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .contact {
@@ -72,7 +113,7 @@
     @apply flex flex-col gap-[14px];
 }
 .contact_info_body__text {
-    @apply relative inline-block uppercase not-italic break-words text-sm font-normal font-mabryPro text-primary-300
+    @apply relative inline-block uppercase not-italic text-sm font-normal font-mabryPro text-primary-300
     cursor-pointer;
 }
 

@@ -1,0 +1,10 @@
+.footer {
+}
+
+.footer_wrapper {
+    @apply py-4 border-t-[1px] border-quinary-100 flex justify-center;
+}
+
+.footer__title {
+    @apply text-center text-sm font-light font-mabryPro text-primary-100/50;
+}

@@ -1,6 +1,5 @@
 :root {
     --burger_menu_size: 30px;
-    --burger_menu_icon_indent: 14px;
 }
 
 #burger_menu {
@@ -27,7 +26,6 @@
     height: var(--burger_menu_size);
     border-left: 2px solid theme('colors.primary.100');
     position: absolute;
-    left: var(--burger_menu_icon_indent);
 }
 
 #burger_menu__icon:after {
@@ -47,7 +45,6 @@
     height: var(--burger_menu_size);
     border-left: 2px solid theme('colors.primary.100');
     position: absolute;
-    left: var(--burger_menu_icon_indent);
 }
 
 #burger_menu__icon.burger_menu__icon--close:after {

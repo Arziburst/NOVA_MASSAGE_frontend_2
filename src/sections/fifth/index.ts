@@ -141,6 +141,7 @@ if (form && inputWrappers && spinner && buttonSubmit) {
             event.preventDefault();
             input.value = '';
             buttonForClearingInput.classList.add('hidden');
+            input.focus();
         });
 
         input.addEventListener('input', (event: any) => {

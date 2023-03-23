@@ -101,5 +101,3 @@ const start = () => {
 };
 
 start();
-
-// todo I have to clear localStore >>> /en >>> see chage selesct

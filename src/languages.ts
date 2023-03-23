@@ -1,14 +1,14 @@
 // Utils
 import { ls } from './utils';
 
-const space = '\u00A0';
-const space4 = '\u00A0\u00A0\u00A0\u00A0';
-
 export const makeCurrentLanguageActive = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
     const countryFromLocalStorage = ls.get();
+    const pathPathname = window.location.pathname.replace(/\//g, '');
 
-    const buttonsWithCurrentLanguage = document.querySelectorAll(`.button_change_language[value="${countryFromLocalStorage}"]`);
+    const language = countryFromLocalStorage || pathPathname === '' ? 'ua' : pathPathname;
+
+    const buttonsWithCurrentLanguage = document.querySelectorAll(`.button_change_language[value="${language}"]`);
 
     if (buttonsWithCurrentLanguage) {
         buttonsForChangingLanguage.forEach((button) => {

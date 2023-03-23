@@ -1,17 +1,17 @@
 <nav class='nav {{class}}'>
     <ul class='nav__list'>
         <li class='nav__item'>
-            <a href='#second_section' class='nav__text nav__text--hover'>
+            <a href='#second_section' class='lng_nav_text_1 nav__text nav__text--hover'>
                 Про мене
             </a>
         </li>
         <li class='nav__item'>
-            <a href='#fourth_section' class='nav__text nav__text--hover'>
+            <a href='#fourth_section' class='lng_nav_text_2 nav__text nav__text--hover'>
                 Ціни
             </a>
         </li>
         <li class='nav__item'>
-            <a href='#contact' class='nav__text nav__text--hover'>
+            <a href='#contact' class='lng_text_3 nav__text nav__text--hover'>
                 Контакти
             </a>
         </li>
@@ -28,10 +28,18 @@
                     </svg>
                 </summary>
                 <div class='nav_select__body'>
-                    <a class='nav_select__item nav_select__item--hover nav_select__item--active'
-                        href='http://localhost:3000/'>UA</a>
-                    <a class='nav_select__item nav_select__item--hover' href='http://localhost:3000/'>EN</a>
-                    <a class='nav_select__item nav_select__item--hover' href='http://localhost:3000/'>RU</a>
+                    <button class='nav_select__item nav_select__item--hover button_change_language active' value="ua">
+                        <span class="lng_header_sr_button_ua sr-only">Кнопка вибору Української мови.</span>
+                        ua
+                    </button>
+                    <button class='nav_select__item nav_select__item--hover button_change_language' value="ru">
+                        <span class="lng_header_sr_button_ru sr-only">Кнопка вибору Російської мови.</span>
+                        ru
+                    </button>
+                    <button class='nav_select__item nav_select__item--hover button_change_language' value="en">
+                        <span class="lng_header_sr_button_en sr-only">Кнопка вибору Англійської мови.</span>
+                        en
+                    </button>
                 </div>
             </details>
         </li>

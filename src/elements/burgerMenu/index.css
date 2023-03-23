@@ -15,7 +15,7 @@
     @apply font-manrope text-2xl p-4 bg-quaternary;
 }
 
-.burger_menu__button--active {
+.burger_menu__button.active {
     @apply bg-quinary-200;
 }
 

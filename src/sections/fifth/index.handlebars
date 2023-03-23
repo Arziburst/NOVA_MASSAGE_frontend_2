@@ -2,39 +2,45 @@
     {{> '../../components/anchor/index' id='anchor_form'}}
     <div class="wrapper fifth_section_wrapper">
         <h4 class="block__title self-start">
-            Записатись<span class="text-secondary">!</span>
+            <span class="lng_form_title ">
+                Записатись
+            </span>
+            <span class="text-secondary">!</span>
         </h4>
         <div class="fifth_section_body">
             <form id="form" class="form">
                 {{> '../../components/input/index' id='input_name' name='name' label='Як до Вас
-                звертатіся?' type='text' props='required'
-                placeholder='Введіть своє повне ім’я'}}
+                звертатіся?' type='text' props='required' classLabel='lng_fifth_section_label_1'
+                classInput='lng_fifth_section_input_1' placeholder='Введіть своє повне ім’я'}}
+
                 {{> '../../components/input/index' id='input_phone' name='phone' label='Ваш номер телефону?'
-                type='text' props='required'
+                type='text' props='required' classLabel='lng_fifth_section_label_2'
                 placeholder='+11 222 333 44 44'}}
+
                 <div class="input">
-                    <label class="input__label" for="input_description">
+                    <label class="lng_fifth_section_label_3 input__label" for="input_description">
                         Поставте запитання або оформіть заявку
                     </label>
                     <div class="input_wrapper">
-                        <textarea class="input__textarea" id="input_description" name="question"
-                            placeholder="Тут Ви можете залишити запитання чи коментар"></textarea>
+                        <textarea class="lng_fifth_section_input_3 input__textarea" id="input_description"
+                            name="question" placeholder="Тут Ви можете залишити запитання чи коментар"></textarea>
                         <button class="input_button hidden top-[20px] right-[20px]">
                             {{> '../../elements/svgClose/index' class='input_button__close'}}
+                            <span class="lng_common_sr_button_clear_input sr-only">Кнопка для очищення поля</span>
                         </button>
                     </div>
                 </div>
                 <button id='button_submit' type='submit'
                     class='button button_scroll relative bg-quinary-100 lg:self-start'>
-                    <span class='button__text invisible'>
+                    <span class='lng_fifth_section_button_submit button__text invisible'>
                         відправити повідомлення
                     </span>
                     <span class='button_scroll_wrapper'>
                         <span class='button_scroll_text'>
-                            <span class='button__text' aria-hidden='true'>
+                            <span class='lng_fifth_section_button_submit button__text' aria-hidden='true'>
                                 відправити повідомлення
                             </span>
-                            <span class='button__text' aria-hidden='true'>
+                            <span class='lng_fifth_section_button_submit button__text' aria-hidden='true'>
                                 відправити повідомлення
                             </span>
                         </span>
@@ -45,11 +51,13 @@
                 </button>
                 <div class="form_area hidden">
                     <img class="form_area__img" src="assets/successful_request.png" alt="Зображення успіху">
-                    <span class="form_area__title">
+                    <span class="lng_fifth_section_success_message form_area__title">
                         Вашу заявку було прийнято в обробку, ми зв'яжемося з вами найближчим часом
                     </span>
                     <span class="form_area__text">
-                        До відправки нової заявки залишилось: <span id="form_area__time"></span>
+                        <span class="lng_fifth_section_success_time">
+                            До відправки нової заявки залишилось:
+                        </span><span id="form_area__time"></span>
                     </span>
                 </div>
             </form>
@@ -60,7 +68,7 @@
                 </div>
                 <div class="contact_info fifth_section_body_second_2">
                     <div class="contact_item">
-                        <h5 class="contact__title">
+                        <h5 class="lng_fifth_section_title_1 contact__title">
                             телефон
                         </h5>
                         <div class="contact_info_body">
@@ -92,12 +100,12 @@
                         </div>
                     </div>
                     <div class="contact_item">
-                        <h5 class="contact__title">
+                        <h5 class="lng_fifth_section_title_2 contact__title">
                             Адреса
                         </h5>
                         <div class="contact_info_body">
                             <div>
-                                <p class="contact_info_body__text contact_info_body__text--hover">
+                                <p class="lng_header_text contact_info_body__text contact_info_body__text--hover">
                                     Київ (десять хвилин від метро Позняки)
                                 </p>
                             </div>
@@ -109,11 +117,12 @@
                 </div>
                 <div class="contact_locate contact_item fifth_section_body_second_4">
 
-                    <h5 class="contact__title">
+                    <h5 class="lng_fifth_section_title_3 contact__title">
                         Локація
                     </h5>
 
-                    <button class="contact_locate_map">
+                    <button id="contact_locate_map" class="contact_locate_map">
+                        <span class="lng_fifth_section_button_map sr-only">Відкрити мапу за допомогою Google</span>
                         <span class="block overflow-hidden rounded-lg">
                             <img class="contact_locate_map__img" src="assets/map.png"
                                 alt="Малюнок, де знаходиться майстер">

@@ -1,11 +1,13 @@
 <div class="input {{class}}">
-    <label class="input__label" for="{{id}}">
+    <label class="input__label {{classLabel}}" for="{{id}}">
         {{label}}
     </label>
     <div class="input_wrapper">
-        <input class="input__input" id="{{id}}" name="{{name}}" type="{{type}}" placeholder="{{placeholder}}" {{props}}>
+        <input class="input__input {{classInput}}" id="{{id}}" name="{{name}}" type="{{type}}"
+            placeholder="{{placeholder}}" {{props}}>
         <button class="input_button hidden">
             {{> '../../elements/svgClose/index' class='input_button__close'}}
+            <span class="lng_common_sr_button_clear_input sr-only">Кнопка для очищення поля</span>
         </button>
     </div>
 </div>

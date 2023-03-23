@@ -1,3 +1,6 @@
+// Map
+import { watcherClickMap } from './map';
+
 // Types
 import { CollectAllValuesOfFormTypes, InputsOfForm } from './types';
 
@@ -114,6 +117,7 @@ const checkIsTimeSubmitRequestOfForm = () => {
 };
 
 checkIsTimeSubmitRequestOfForm();
+watcherClickMap();
 
 setInterval(() => {
     if (!isRequestFetching) {

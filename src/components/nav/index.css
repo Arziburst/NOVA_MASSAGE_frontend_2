@@ -12,58 +12,48 @@
 
 .nav__text {
     border-color: transparent;
-    @apply pb-1 text-[32px] md:text-sm font-mabryPro font-normal md:font-medium text-primary-100 border-b-2
+    @apply pb-1 text-[32px] md:text-sm font-mabryPro font-normal md:font-medium text-primary-100 border-b-2;
 }
 
 .nav__text--hover {
-    @apply hover:text-quinary-500 hover:border-quinary-500
+    @apply hover:text-quinary-500 hover:border-quinary-500;
 }
 
 .nav__item--only_desktop {
-    @apply hidden md:block
+    @apply hidden md:block;
 }
-
-/* .nav_select {
-    @apply py-1.5 px-2 bg-tertiary-100 text-sm font-medium font-mabryPro text-primary-200;
-}
-
-.nav_select:focus, .nav_select:hover {
-    @apply rounded-sm bg-quaternary text-primary-300
-}
-
-.nav_select__item {
-    top: 10px;
-} */
 
 .nav_select {
     @apply bg-tertiary-100 text-sm font-medium font-mabryPro;
 }
 
 .nav_select[open] {
-    @apply rounded-sm bg-quaternary text-primary-300
+    @apply rounded-sm bg-quaternary text-primary-300;
 }
 .nav_select[open] .nav_select__summary {
-    @apply rounded-sm bg-quaternary text-primary-300
+    @apply rounded-sm bg-quaternary text-primary-300;
 }
 .nav_select[open] .nav_select__summary svg path {
-    @apply fill-primary-300
+    @apply fill-primary-300;
 }
-.nav_select[open] .nav_select__summary:hover, .nav_select[open] .nav_select__summary:hover svg path {
-    @apply rounded-sm bg-quaternary text-primary-100 fill-primary-100
+.nav_select[open] .nav_select__summary:hover,
+.nav_select[open] .nav_select__summary:hover svg path {
+    @apply rounded-sm bg-quaternary text-primary-100 fill-primary-100;
 }
 
 .nav_select__summary {
-    @apply flex items-center gap-2.5 py-1.5 px-2 rounded-sm cursor-pointer text-primary-200 hover:text-primary-100 hover:bg-quaternary
+    @apply flex items-center gap-2.5 py-1.5 px-2 rounded-sm cursor-pointer text-primary-200 hover:text-primary-100 hover:bg-quaternary;
 }
 
 .nav_select__summary:hover svg path {
-    @apply fill-primary-100
+    @apply fill-primary-100;
 }
 
-.nav_select__active_value {}
+.nav_select__active_value {
+}
 
 .nav_select__summary::marker {
-    @apply hidden content-none
+    @apply hidden content-none;
 }
 
 .nav_select__summary svg path {
@@ -76,19 +66,19 @@
 }
 
 .nav_select__body {
-    @apply w-full absolute overflow-hidden flex flex-col bottom-[-6px] rounded-sm bg-quaternary left-1/2 translate-x-[-50%] translate-y-full;
+    @apply w-full absolute overflow-hidden flex flex-col bottom-[-6px] rounded-sm bg-quaternary left-1/2 translate-x-[-50%] translate-y-full z-10;
 }
 
 .nav_select__item {
-    @apply p-2 text-quaternary-400
+    @apply p-2 text-quaternary-400 uppercase;
 }
 
-.nav_select__item--active {
-    @apply bg-quinary-200 text-primary-300
+.nav_select__item.active {
+    @apply bg-quinary-200 text-primary-300;
 }
 
 .nav_select__item--hover {
-    @apply hover:bg-quinary-100 hover:text-primary-300
+    @apply hover:bg-quinary-100 hover:text-primary-300;
 }
 
 @media (max-width: 768px) and (min-height: 600px) {

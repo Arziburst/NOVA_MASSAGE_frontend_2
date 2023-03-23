@@ -3,13 +3,14 @@
         <div class='flex relative'>
             <div class='slider_card'>
                 <div class="slider__second_img">
-                    <img class='slider__first_img' src='./assets/primary_image_of_slider.jpg' alt='фото'>
+                    <img class='lng_slider_slide slider__first_img' src='./assets/primary_image_of_slider.jpg'
+                        alt='Фото слайда'>
                 </div>
             </div>
         </div>
         <div>
             <button class='slider_button'>
-                <span class='slider_button__text'>
+                <span class='slider_button__text' aria-hidden='true'>
                     <span id='current_slide'>
                         01
                     </span>
@@ -18,7 +19,7 @@
                         04
                     </span>
                 </span>
-                <span class='slider_button__arrow'>
+                <span class='slider_button__arrow' aria-hidden='true'>
                     <svg width='57' height='25' viewBox='0 0 57 25' fill='none' xmlns='http://www.w3.org/2000/svg'>
                         <mask id='path-1-outside-1_937_410' maskUnits='userSpaceOnUse' x='47.0002' y='-0.500001'
                             width='10' class='slider_button__arrow--color' height='26'>
@@ -36,13 +37,14 @@
                         <rect x='0.275' y='12.2242' width='54.3527' height='0.55' class='slider_button__arrow--color'
                             stroke-width='0.55'></rect>
                     </svg>
-
                 </span>
+                <span class="lng_slider_sr_button_next_slide sr-only">Кнопка для гортання слайдів</span>
             </button>
         </div>
     </div>
     <div id="view_slide">
-        <img class="view_slide__img" src="./assets/primary_image_of_slider.jpg" alt="Фото, на яке ви натиснули">
+        <img class="lng_slider_show_slide view_slide__img" src="./assets/primary_image_of_slider.jpg"
+            alt="Фото, на яке ви натиснули">
         <svg class="view_slide__button_close" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"
             width="30px" height="30px">
             <path

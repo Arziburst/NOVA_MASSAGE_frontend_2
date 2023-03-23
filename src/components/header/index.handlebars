@@ -17,7 +17,7 @@
                         d="M17.1 8.825C16.9167 8.825 16.7542 8.75833 16.6125 8.625C16.4708 8.49167 16.3833 8.325 16.35 8.125C16.1167 6.40833 15.3875 4.9375 14.1625 3.7125C12.9375 2.4875 11.4667 1.75833 9.75 1.525C9.55 1.49167 9.38333 1.40417 9.25 1.2625C9.11667 1.12083 9.05 0.95 9.05 0.75C9.05 0.533333 9.125 0.35 9.275 0.2C9.425 0.05 9.60833 -0.00833324 9.825 0.0250001C11.9417 0.258333 13.75 1.125 15.25 2.625C16.75 4.125 17.6167 5.93333 17.85 8.05C17.8833 8.26667 17.825 8.45 17.675 8.6C17.525 8.75 17.3333 8.825 17.1 8.825ZM12.8 8.825C12.6333 8.825 12.4792 8.77083 12.3375 8.6625C12.1958 8.55417 12.1 8.40833 12.05 8.225C11.8833 7.64167 11.5875 7.1375 11.1625 6.7125C10.7375 6.2875 10.2333 5.99167 9.65 5.825C9.46667 5.775 9.32083 5.6875 9.2125 5.5625C9.10417 5.4375 9.05 5.28333 9.05 5.1C9.05 4.85 9.13333 4.65 9.3 4.5C9.46667 4.35 9.66667 4.3 9.9 4.35C10.8 4.56667 11.575 5 12.225 5.65C12.875 6.3 13.3167 7.075 13.55 7.975C13.6 8.20833 13.55 8.40833 13.4 8.575C13.25 8.74167 13.05 8.825 12.8 8.825ZM16.875 18C14.8417 18 12.8208 17.5 10.8125 16.5C8.80417 15.5 7 14.2 5.4 12.6C3.8 11 2.5 9.19583 1.5 7.1875C0.5 5.17917 0 3.15833 0 1.125C0 0.808333 0.108333 0.541667 0.325 0.325C0.541667 0.108333 0.808333 0 1.125 0H4.625C4.85833 0 5.0625 0.0791666 5.2375 0.2375C5.4125 0.395833 5.525 0.608333 5.575 0.875L6.25 4.025C6.28333 4.25833 6.27917 4.47083 6.2375 4.6625C6.19583 4.85417 6.10833 5.01667 5.975 5.15L3.475 7.675C4.40833 9.225 5.45417 10.575 6.6125 11.725C7.77083 12.875 9.08333 13.85 10.55 14.65L12.925 12.2C13.0917 12.0167 13.2833 11.8875 13.5 11.8125C13.7167 11.7375 13.9333 11.725 14.15 11.775L17.125 12.425C17.375 12.475 17.5833 12.6 17.75 12.8C17.9167 13 18 13.2333 18 13.5V16.875C18 17.1917 17.8917 17.4583 17.675 17.675C17.4583 17.8917 17.1917 18 16.875 18ZM2.725 6.3L4.75 4.25L4.175 1.5H1.5C1.5 2.15 1.6 2.8625 1.8 3.6375C2 4.4125 2.30833 5.3 2.725 6.3ZM16.5 16.5V13.825L13.925 13.3L11.95 15.375C12.6333 15.6917 13.375 15.95 14.175 16.15C14.975 16.35 15.75 16.4667 16.5 16.5Z"
                         fill="black" />
                 </svg>
-                <span class="sr-only">Мобільний телефон майстра</span>
+                <span class="lng_header_sr_phone sr-only">Мобільний телефон майстра</span>
                 <p class="text-xs md:text-sm font-medium font-mabryPro text-primary-100">
                     +38 (096) 170 53 76
                 </p>
@@ -32,25 +32,29 @@
             {{> '../nav/index' class='nav_mobile block'}}
             <div>
                 <div class="flex flex-wrap justify-between gap-2.5 max-w-[250px] ml-auto mr-auto">
-                    <button class="button burger_menu__button block--hover rounded-md burger_menu__button--active">
-                        <span class="sr-only">Кнопка вибору Англійської мови</span>
+                    <button class="button burger_menu__button block--hover rounded-md button_change_language active"
+                        value="en">
+                        <span class="lng_header_sr_button_en sr-only">Кнопка вибору Англійської мови.</span>
                         EN
                     </button>
-                    <button class="button burger_menu__button block--hover rounded-md">
-                        <span class="sr-only">Кнопка вибору Української мови</span>
+                    <button class="button burger_menu__button block--hover rounded-md button_change_language"
+                        value="ua">
+                        <span class="lng_header_sr_button_ua sr-only">Кнопка вибору Української мови.</span>
                         UA
                     </button>
-                    <button class="button burger_menu__button block--hover rounded-md">
-                        <span class="sr-only">Кнопка вибору Російської мови</span>
+                    <button class="button burger_menu__button block--hover rounded-md button_change_language"
+                        value="ru">
+                        <span class="lng_header_sr_button_ru sr-only">Кнопка вибору Російської мови.</span>
                         RU
                     </button>
                 </div>
             </div>
             <div class="uppercase">
-                <h3 class="text-center font-mabryPro text-sm text-primary-100">
+                <h3 class="lng_header_title text-center font-mabryPro text-sm text-primary-100">
                     Адреса
                 </h3>
-                <address class="text-center text-sm font-normal font-mabryPro not-italic text-primary-300">
+                <address
+                    class="lng_header_text text-center text-sm font-normal font-mabryPro not-italic text-primary-300">
                     Київ (десять хвилин від метро Позняки)
                 </address>
             </div>

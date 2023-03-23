@@ -12,6 +12,8 @@ import './components/header';
 import './components/slider';
 import './sections/third';
 import './sections/fifth';
+import { changeHeightFirstSection } from './sections/first';
+import { changeValueNavSelectedLanguage } from './components/nav';
 
 // Utils
 import {
@@ -23,12 +25,10 @@ import {
     defaultURL,
     ls,
 } from './utils';
+import { makeCurrentLanguageActive } from './languages';
 
 // Styles
 import './main.css';
-import { changeHeightFirstSection } from './sections/first';
-import { changeValueNavSelectedLanguage } from './components/nav';
-import { makeCurrentLanguageActive } from './languages';
 
 const start = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
@@ -36,6 +36,11 @@ const start = () => {
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
     const countryFromLocalStorage = ls.get();
+
+    if (!allURL.includes(pathPathname)) {
+        history.pushState(null, '', `/${defaultURL}`);
+        location.reload();
+    }
 
     if (buttonsForChangingLanguage) {
         buttonsForChangingLanguage.forEach((button) => {
@@ -84,9 +89,6 @@ const start = () => {
         checkCountryAndChangeURL();
     } else {
         console.log('} else {');
-        // if (!countryFromLocalStorage) {
-        //     return;
-        // }
 
         makeCurrentLanguageActive();
 

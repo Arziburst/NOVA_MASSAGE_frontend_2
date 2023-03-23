@@ -1,20 +1,26 @@
 import { languagesBlockMapConfirm } from '../../languages';
+import { ls } from '../../utils';
+
+// Types
+type PathPathname = '' | 'ru' | 'en'
 
 const getLangConfirm = () => {
-    const selectChangeLang = document.querySelector<HTMLSelectElement>('#change_lang');
-    if (!selectChangeLang) {
-        return;
-    }
-    const valueS = selectChangeLang.value;
+    // const selectChangeLang = document.querySelector<HTMLSelectElement>('#change_lang');
 
-    if (valueS === 'ru') {
+    const currentLanguage = ls.get();
+    const pathPathname = window.location.pathname.replace(/\//g, '') as PathPathname;
+
+    if (currentLanguage === 'ua') {
+        return languagesBlockMapConfirm.ua;
+    }
+    if (currentLanguage === 'ru') {
         return languagesBlockMapConfirm.ru;
     }
-    if (valueS === 'en') {
+    if (currentLanguage === 'en') {
         return languagesBlockMapConfirm.en;
     }
 
-    return languagesBlockMapConfirm.ua;
+    return pathPathname === '' ? languagesBlockMapConfirm.ua : languagesBlockMapConfirm[ `${pathPathname}` ];
 };
 
 export const watcherClickMap = () => {

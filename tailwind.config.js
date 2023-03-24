@@ -18,14 +18,7 @@ module.exports = {
             xl:   '3rem', // 48px
             full: '9999px', // native from tailwindcss
         },
-        extend: {
-            // wrapper: {
-            //     'margin-right': 'auto',
-            //     'margin-left': 'auto',
-            //     'max-width': '1400px',
-            //     'backdrop-color': 'red',
-            // },
-        },
+        extend: {},
     },
     plugins: [],
 };

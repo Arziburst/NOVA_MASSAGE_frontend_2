@@ -1,4 +1,5 @@
 .footer {
+    @apply w-full;
 }
 
 .footer_wrapper {

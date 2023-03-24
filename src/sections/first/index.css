@@ -27,9 +27,18 @@
 }
 
 .first_section__title:after {
-    @apply content-[""] h-[60px] w-[60px] bg-secondary absolute top-0 left-1/2 translate-y-[-25%] translate-x-10 rounded-full opacity-50 z-[-1]
+    transition: all 1s;
+    @apply h-[60px] w-[60px] rounded-full 
+    content-[""] 
+    absolute top-0 left-1/2 
+    translate-y-[-25%] translate-x-10 
+    opacity-50 z-[-1]
+    bg-secondary 
     md:h-[100px] md:w-[100px] 
     xl:left-[220px] xl:translate-y-[-10%];
+}
+.first_section__title:hover:after {
+    @apply scale-125;
 }
 
 .first_section__title_second {

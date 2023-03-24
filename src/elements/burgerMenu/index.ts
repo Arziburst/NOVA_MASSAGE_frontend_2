@@ -17,15 +17,13 @@ export const burgerMenu = () => {
         burgerMenuIcon.classList.toggle('burger_menu__icon--close');
         navDropdown.classList.toggle('burger_menu__dropdown--open');
     });
-};
 
-burgerMenu();
-
-navText.forEach((link) => {
-    link.addEventListener('click', () => {
-        if (burgerMenuIcon && navDropdown) {
-            burgerMenuIcon.classList.remove('burger_menu__icon--close');
-            navDropdown.classList.remove('burger_menu__dropdown--open');
-        }
+    navText.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (burgerMenuIcon && navDropdown) {
+                burgerMenuIcon.classList.remove('burger_menu__icon--close');
+                navDropdown.classList.remove('burger_menu__dropdown--open');
+            }
+        });
     });
-});
+};

@@ -5,8 +5,6 @@ import { ls } from '../../utils';
 type PathPathname = '' | 'ru' | 'en'
 
 const getLangConfirm = () => {
-    // const selectChangeLang = document.querySelector<HTMLSelectElement>('#change_lang');
-
     const currentLanguage = ls.get();
     const pathPathname = window.location.pathname.replace(/\//g, '') as PathPathname;
 

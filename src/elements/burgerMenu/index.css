@@ -72,6 +72,16 @@
 .burger_menu__dropdown--open {
     @apply flex;
 }
+.burger_menu__dropdown--open::after {
+    content: '';
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    transform: translate(-30%, -50%);
+    @apply bg-secondary;
+}
 
 .burger_menu__text {
     @apply text-center font-mabryPro text-sm font-normal leading-6;

@@ -57,7 +57,7 @@ const collectAllValuesOfForm = async ({ inputs, spinner, buttonSubmit }: Collect
                 setTimeout(() => {
                     console.log('mockFetch => data >>>', data);
                     resolve({ status: 200 });
-                }, 3000);
+                }, 5000);
             });
         };
         const response: any = await mockFetch(InputsOfFormData);

@@ -1,6 +1,5 @@
-<section class="fifth_section wrapper--padding-y">
-    {{> '../../components/anchor/index' id='anchor_form'}}
-    <div class="wrapper fifth_section_wrapper">
+<section class="fifth_section relative">
+    <div class="wrapper w-full fifth_section_wrapper wrapper--padding-y" id='anchor_form'>
         <h4 class="block__title self-start">
             <span class="lng_form_title ">
                 Записатись
@@ -61,8 +60,7 @@
                     </span>
                 </div>
             </form>
-            <div class="fifth_section_body_second contact">
-                {{> '../../components/anchor/index' id='anchor_contact'}}
+            <div class="fifth_section_body_second contact" id='anchor_contact'>
                 <div class="fifth_section_body_second_1">
                     {{> '../../elements/decorElementsForTouching/index' class='fifth_section_body_second_1--animation'}}
                 </div>
@@ -132,4 +130,5 @@
             </div>
         </div>
     </div>
+    {{> '../footer/index'}}
 </section>

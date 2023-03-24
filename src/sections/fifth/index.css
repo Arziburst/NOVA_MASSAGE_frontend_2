@@ -106,7 +106,8 @@
     @apply flex flex-col gap-[10px];
 }
 .contact_info {
-    @apply flex flex-col gap-[30px];
+    @apply flex flex-col gap-[30px]
+    sm:justify-self-start;
 }
 
 .contact_info_body {
@@ -157,12 +158,6 @@
 }
 .contact_locate_map__img:hover {
     @apply scale-125;
-}
-
-@media (min-width: 400px) and (max-width: 640px) {
-    .contact_item {
-        /* @apply items-center; */ /* todo ????? */
-    }
 }
 
 @media (min-width: 640px) {

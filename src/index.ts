@@ -25,13 +25,17 @@ import {
     defaultURL,
     ls,
 } from './utils';
-import { makeCurrentLanguageActive } from './languages';
 
 // Styles
 import './main.css';
 
 const start = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
+    const navSelect = document.querySelector<HTMLDetailsElement>('.nav_select');
+
+    const navDropdown = document.querySelector('.burger_menu__dropdown');
+    const burgerMenuIcon = document.querySelector('#burger_menu__icon');
+
 
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
@@ -42,14 +46,18 @@ const start = () => {
         location.reload();
     }
 
-    if (buttonsForChangingLanguage) {
+    if (buttonsForChangingLanguage && navSelect && burgerMenuIcon && navDropdown) {
         buttonsForChangingLanguage.forEach((button) => {
             button.addEventListener('click', (event) => {
+                navSelect.open = false;
+
+                burgerMenuIcon.classList.remove('burger_menu__icon--close');
+                navDropdown.classList.remove('burger_menu__dropdown--open');
+
                 const target: any = event.target;
                 const value = target.value;
                 ls.set(`${value}`);
 
-                makeCurrentLanguageActive();
 
                 changeURL(value); // if value === ua >>> reload page
                 if (value === ukraine) {
@@ -65,16 +73,12 @@ const start = () => {
     }
 
     if (countryFromLocalStorage !== null && countryFromLocalStorage === ukraine) {
-        console.log('if localStore && localStore === ua');
         history.pushState(null, '', `/${defaultURL}`);
 
         return;
     }
 
     if (countryFromLocalStorage !== null && allURL.includes(countryFromLocalStorage)) { // allURL = '' ru en
-        console.log('if localStore && localStore === "" || ru || en');
-        makeCurrentLanguageActive();
-
         changeURL(countryFromLocalStorage);
         changeLanguageOnPage();
         changeValueNavSelectedLanguage();
@@ -85,13 +89,8 @@ const start = () => {
     }
 
     if (pathPathname === defaultURL) {
-        console.log('if URL === "" ');
         checkCountryAndChangeURL();
     } else {
-        console.log('} else {');
-
-        makeCurrentLanguageActive();
-
         changeURL(pathPathname);
         changeLanguageOnPage();
         changeValueNavSelectedLanguage();

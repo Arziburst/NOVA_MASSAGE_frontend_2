@@ -1,14 +1,23 @@
 // Utils
-import { ls } from './utils';
+import { ls, ukraine } from './utils';
 
 export const makeCurrentLanguageActive = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
     const countryFromLocalStorage = ls.get();
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
-    const language = countryFromLocalStorage || pathPathname === '' ? 'ua' : pathPathname;
+    const getValueLanguage = () => {
+        if (typeof countryFromLocalStorage === 'string') {
+            return countryFromLocalStorage;
+        }
+        if (pathPathname === '') {
+            return ukraine;
+        }
 
-    const buttonsWithCurrentLanguage = document.querySelectorAll(`.button_change_language[value="${language}"]`);
+        return pathPathname;
+    };
+
+    const buttonsWithCurrentLanguage = document.querySelectorAll<HTMLButtonElement>(`.button_change_language[value="${getValueLanguage()}"]`);
 
     if (buttonsWithCurrentLanguage) {
         buttonsForChangingLanguage.forEach((button) => {

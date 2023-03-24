@@ -66,12 +66,12 @@
     lg:text-[36px] lg:leading-[40px];
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .third_section_second_block * {
         font-size: 40px;
     }
 }
-@media (max-width: 330px) {
+@media (max-width: 370px) {
     .third_section_second_block * {
         font-size: 30px;
     }

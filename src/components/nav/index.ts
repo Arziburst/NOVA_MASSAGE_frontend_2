@@ -11,7 +11,6 @@ export const changeValueNavSelectedLanguage = () => {
     }
 
     const value = (pathPathname === '' ? ukraine : pathPathname).toUpperCase();
-    console.log('changeValueNavSelectedLanguage => value:', value);
 
     block.innerHTML = value;
 };

@@ -42,26 +42,13 @@ const collectAllValuesOfForm = async ({ inputs, spinner, buttonSubmit }: Collect
         toggleHTMLElementsDisabledState({ isFormBlocked: true, inputs, buttonSubmit });
         spinner.classList.remove('hidden');
 
-        // const response = await fetch(`${process.env.API_URL}/contactUs`, {
-        //     method:  'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(InputsOfFormData),
-        // });
-
-        // todo remove mockFetch. This is mockFetch!
-        //! START
-        const mockFetch = (data: any) => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    console.log('mockFetch => data >>>', data);
-                    resolve({ status: 200 });
-                }, 5000);
-            });
-        };
-        const response: any = await mockFetch(InputsOfFormData);
-        //!END
+        const response = await fetch(`${process.env.API_URL}/contactUs`, {
+            method:  'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(InputsOfFormData),
+        });
 
         if (response.status !== 200) {
             throw new Error('makeRequestToContactUs failed');

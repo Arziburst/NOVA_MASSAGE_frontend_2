@@ -80,7 +80,6 @@ export const checkCountryAndChangeURL = () => {
             fetch(geo).then((res) => res.json())
                 .then((data) => {
                     const yourCountryName: string = data.countryName;
-                    console.log('fetch.then => yourCountryName:', yourCountryName);
 
                     if (!(typeof yourCountryName === 'string')) {
                         return;

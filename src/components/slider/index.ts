@@ -38,9 +38,7 @@ const overwriteNewSlideLengthForButtonSlider = () => {
     }
 };
 
-overwriteNewSlideLengthForButtonSlider();
-
-export const handleButtonOfSlider = () => {
+const handleButtonOfSlider = () => {
     if (imgOfSlider && secondImgOfSlider && buttonOfSlider && sliderCard && !sliderCard.classList.contains('slider_card--animation')) {
         buttonOfSlider.disabled = true;
 
@@ -56,32 +54,36 @@ export const handleButtonOfSlider = () => {
     }
 };
 
-imgOfSlider?.addEventListener('click', () => {
-    if (viewSlide && viewSlideImg) {
-        viewSlide.style.display = 'flex';
-        viewSlideImg.src = imgOfSlider.src;
-    }
-});
+export const slider = () => {
+    overwriteNewSlideLengthForButtonSlider();
 
-viewSlide?.addEventListener('click', () => {
-    if (viewSlide) {
-        viewSlide.style.display = 'none';
-    }
-});
+    imgOfSlider?.addEventListener('click', () => {
+        if (viewSlide && viewSlideImg) {
+            viewSlide.style.display = 'flex';
+            viewSlideImg.src = imgOfSlider.src;
+        }
+    });
 
-buttonOfSlider?.addEventListener('click', handleButtonOfSlider);
+    viewSlide?.addEventListener('click', () => {
+        if (viewSlide) {
+            viewSlide.style.display = 'none';
+        }
+    });
 
-sliderCard?.addEventListener('animationend', () => {
-    if (imgOfSlider && currentSlide && slideLength && buttonOfSlider) {
-        imgOfSlider.src = storeSlider.images[ storeSlider.number ];
+    buttonOfSlider?.addEventListener('click', handleButtonOfSlider);
 
-        currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
+    sliderCard?.addEventListener('animationend', () => {
+        if (imgOfSlider && currentSlide && slideLength && buttonOfSlider) {
+            imgOfSlider.src = storeSlider.images[ storeSlider.number ];
 
-        overwriteNewSlideLengthForButtonSlider();
+            currentSlide.innerHTML = storeSlider.number < 9 ? `0${storeSlider.number + 1}` : `${storeSlider.number + 1}`;
 
-        imgOfSlider.classList.remove('slider__first_img--animation');
-        sliderCard.classList.remove('slider_card--animation');
+            overwriteNewSlideLengthForButtonSlider();
 
-        buttonOfSlider.disabled = false;
-    }
-});
+            imgOfSlider.classList.remove('slider__first_img--animation');
+            sliderCard.classList.remove('slider_card--animation');
+
+            buttonOfSlider.disabled = false;
+        }
+    });
+};

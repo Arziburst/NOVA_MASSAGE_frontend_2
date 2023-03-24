@@ -9,7 +9,7 @@ const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 
 let turnOver: boolean | null = null;
 
-export const changeHightParallax = () => {
+const changeHightParallax = () => {
     if (
         thirdSectionWrapper
         && thirdSectionFirstBlock
@@ -28,5 +28,8 @@ export const changeHightParallax = () => {
     }
 };
 
-window.addEventListener('DOMContentLoaded', changeHightParallax);
-window.addEventListener('resize', changeHightParallax);
+export const third = () => {
+    window.addEventListener('DOMContentLoaded', changeHightParallax);
+    window.addEventListener('resize', changeHightParallax);
+};
+

@@ -1,35 +1,3 @@
-// Utils
-import { ls, ukraine } from './utils';
-
-export const makeCurrentLanguageActive = () => {
-    const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
-    const countryFromLocalStorage = ls.get();
-    const pathPathname = window.location.pathname.replace(/\//g, '');
-
-    const getValueLanguage = () => {
-        if (typeof countryFromLocalStorage === 'string') {
-            return countryFromLocalStorage;
-        }
-        if (pathPathname === '') {
-            return ukraine;
-        }
-
-        return pathPathname;
-    };
-
-    const buttonsWithCurrentLanguage = document.querySelectorAll<HTMLButtonElement>(`.button_change_language[value="${getValueLanguage()}"]`);
-
-    if (buttonsWithCurrentLanguage) {
-        buttonsForChangingLanguage.forEach((button) => {
-            button.classList.remove('active');
-        });
-
-        buttonsWithCurrentLanguage.forEach((button) => {
-            button.classList.add('active');
-        });
-    }
-};
-
 export const languagesForBlocks: any = {
     common: {
         sr_button_clear_input: {

@@ -12,7 +12,7 @@ const addEventListenerFunction = () => {
     }, 100);
 };
 
-export const anchor = () => {
+export const anchors = () => {
     const anchors = document.querySelectorAll('.anchor');
     const header = document.querySelector<HTMLElement>('.header');
 
@@ -28,4 +28,3 @@ export const anchor = () => {
     }
 };
 
-anchor();

@@ -116,46 +116,48 @@ const checkIsTimeSubmitRequestOfForm = () => {
     }
 };
 
-checkIsTimeSubmitRequestOfForm();
-watcherClickMap();
+export const fifth = () => {
+    checkIsTimeSubmitRequestOfForm();
+    watcherClickMap();
 
-setInterval(() => {
-    if (!isRequestFetching) {
-        checkIsTimeSubmitRequestOfForm();
-    }
-}, 1000);
-
-if (form && inputWrappers && spinner && buttonSubmit) {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        collectAllValuesOfForm({ inputs, spinner, buttonSubmit });
-    });
-    inputWrappers.forEach((inputWrapper) => {
-        const inputHTMLElement = inputWrapper.querySelector<HTMLInputElement>('.input__input');
-        const textareaHTMLElement = inputWrapper.querySelector<HTMLTextAreaElement>('.input__textarea');
-
-        const buttonForClearingInput = inputWrapper.querySelector('.input_button');
-
-        const input = inputHTMLElement || textareaHTMLElement;
-        if (!(input && buttonForClearingInput)) {
-            return;
+    setInterval(() => {
+        if (!isRequestFetching) {
+            checkIsTimeSubmitRequestOfForm();
         }
+    }, 1000);
 
-        buttonForClearingInput.addEventListener('click', (event) => {
+    if (form && inputWrappers && spinner && buttonSubmit) {
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
-            input.value = '';
-            buttonForClearingInput.classList.add('hidden');
-            input.focus();
+            collectAllValuesOfForm({ inputs, spinner, buttonSubmit });
         });
+        inputWrappers.forEach((inputWrapper) => {
+            const inputHTMLElement = inputWrapper.querySelector<HTMLInputElement>('.input__input');
+            const textareaHTMLElement = inputWrapper.querySelector<HTMLTextAreaElement>('.input__textarea');
 
-        input.addEventListener('input', (event: any) => {
-            const value = event.target.value;
+            const buttonForClearingInput = inputWrapper.querySelector('.input_button');
 
-            if (value.length > 0) {
-                buttonForClearingInput.classList.remove('hidden');
-            } else {
-                buttonForClearingInput.classList.add('hidden');
+            const input = inputHTMLElement || textareaHTMLElement;
+            if (!(input && buttonForClearingInput)) {
+                return;
             }
+
+            buttonForClearingInput.addEventListener('click', (event) => {
+                event.preventDefault();
+                input.value = '';
+                buttonForClearingInput.classList.add('hidden');
+                input.focus();
+            });
+
+            input.addEventListener('input', (event: any) => {
+                const value = event.target.value;
+
+                if (value.length > 0) {
+                    buttonForClearingInput.classList.remove('hidden');
+                } else {
+                    buttonForClearingInput.classList.add('hidden');
+                }
+            });
         });
-    });
-}
+    }
+};

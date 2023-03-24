@@ -35,6 +35,8 @@ export const changeHeightFirstSection = () => {
     }
 };
 
-window.addEventListener('load', changeHeightFirstSection);
-window.addEventListener('resize', changeHeightFirstSection);
+export const first = () => {
+    changeHeightFirstSection();
+    window.addEventListener('resize', changeHeightFirstSection);
+};
 

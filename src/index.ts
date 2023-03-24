@@ -7,14 +7,15 @@ import './assets/images/successful_request.png';
 import './elements/burgerMenu/index';
 
 // Components
-import './sections/first';
-import './components/header';
-import './components/anchor';
-import './components/slider';
-import './sections/third';
-import './sections/fifth';
-import { changeHeightFirstSection } from './sections/first';
+import { header } from './components/header';
+import { anchors } from './components/anchor';
+import { slider } from './components/slider';
 import { changeValueNavSelectedLanguage } from './components/nav';
+
+// Sections
+import { first, changeHeightFirstSection } from './sections/first';
+import { third } from './sections/third';
+import { fifth } from './sections/fifth';
 
 // Utils
 import {
@@ -29,6 +30,35 @@ import {
 
 // Styles
 import './main.css';
+
+export const makeCurrentLanguageActive = () => {
+    const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
+    const countryFromLocalStorage = ls.get();
+    const pathPathname = window.location.pathname.replace(/\//g, '');
+
+    const getValueLanguage = () => {
+        if (typeof countryFromLocalStorage === 'string') {
+            return countryFromLocalStorage;
+        }
+        if (pathPathname === '') {
+            return ukraine;
+        }
+
+        return pathPathname;
+    };
+
+    const buttonsWithCurrentLanguage = document.querySelectorAll<HTMLButtonElement>(`.button_change_language[value="${getValueLanguage()}"]`);
+
+    if (buttonsWithCurrentLanguage) {
+        buttonsForChangingLanguage.forEach((button) => {
+            button.classList.remove('active');
+        });
+
+        buttonsWithCurrentLanguage.forEach((button) => {
+            button.classList.add('active');
+        });
+    }
+};
 
 const start = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
@@ -101,3 +131,11 @@ const start = () => {
 };
 
 start();
+
+header();
+anchors();
+
+first();
+slider();
+third();
+fifth();

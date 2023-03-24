@@ -1,5 +1,7 @@
 import { changeValueNavSelectedLanguage } from './components/nav';
-import { languagesForBlocks, makeCurrentLanguageActive } from './languages';
+import { languagesForBlocks } from './languages';
+
+import { makeCurrentLanguageActive } from './index';
 
 import { changeHeightFirstSection } from './sections/first';
 

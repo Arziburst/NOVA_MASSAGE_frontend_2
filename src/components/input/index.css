@@ -8,7 +8,6 @@
 }
 
 .input_wrapper {
-    /* @apply flex border-b-2 border-quinary-100 */
     @apply relative
     hover:opacity-80;
 }

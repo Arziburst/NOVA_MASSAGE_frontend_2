@@ -87,7 +87,6 @@ export const checkCountryAndChangeURL = () => {
 
                     if (yourCountryName === 'Ukraine') {
                         history.pushState(null, '', `/${defaultURL}`);
-                        // selectChangeLang.value = ukraine;
                         changeValueNavSelectedLanguage();
 
                         return;
@@ -95,7 +94,6 @@ export const checkCountryAndChangeURL = () => {
 
                     if (yourCountryName !== 'Ukraine' && !countriesSNG.includes(yourCountryName)) {
                         history.pushState(null, '', '/en');
-                        // selectChangeLang.value = 'en';
                         changeValueNavSelectedLanguage();
                         changeLanguageOnPage();
                         changeHeightFirstSection();
@@ -105,7 +103,6 @@ export const checkCountryAndChangeURL = () => {
 
                     if (countriesSNG.includes(yourCountryName)) {
                         history.pushState(null, '', '/ru');
-                        // selectChangeLang.value = 'ru';
                         changeValueNavSelectedLanguage();
                         changeLanguageOnPage();
                         changeHeightFirstSection();
@@ -114,7 +111,6 @@ export const checkCountryAndChangeURL = () => {
                     }
 
                     history.pushState(null, '', `/${defaultURL}`);
-                    // selectChangeLang.value = ukraine;
                     changeValueNavSelectedLanguage();
                 });
         });

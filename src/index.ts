@@ -4,7 +4,7 @@ import './assets/images/map.png';
 import './assets/images/successful_request.png';
 
 // Functions
-import './elements/burgerMenu/index';
+import { burgerMenu } from './elements/burgerMenu/index';
 
 // Components
 import { header } from './components/header';
@@ -131,7 +131,7 @@ const start = () => {
 };
 
 start();
-
+burgerMenu();
 header();
 anchors();
 

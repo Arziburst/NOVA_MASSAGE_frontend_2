@@ -1,9 +1,13 @@
-import { changeValueNavSelectedLanguage } from './components/nav';
+// Commons
 import { languagesForBlocks } from './languages';
-
 import { makeCurrentLanguageActive } from './index';
 
+// Sections
 import { changeHeightFirstSection } from './sections/first';
+
+// Components
+import { changeValueNavSelectedLanguage } from './components/nav';
+import { showButtonIfBug } from './components/showButtonIfBug';
 
 export const defaultURL = '';
 export const ukraine = 'ua';
@@ -126,3 +130,26 @@ export const changeURL = (value: string) => {
     }
     history.pushState(null, '', `/${value}`);
 };
+
+export const getValueFromCssVariables = (value: string) => Number(getComputedStyle(document.documentElement)
+    .getPropertyValue(`--${value}`)
+    .replace('px', ''));
+
+export function setViewportProperty(doc: HTMLElement) {
+    let prevClientHeight: number = 0;
+    const customVar = '--vh';
+    function handleResize() {
+        const clientHeight = doc.clientHeight;
+        if (clientHeight === prevClientHeight) {
+            return;
+        }
+        requestAnimationFrame(function updateViewportHeight() {
+            showButtonIfBug();
+            doc.style.setProperty(customVar, clientHeight + 'px');
+            prevClientHeight = clientHeight;
+        });
+    }
+    handleResize();
+
+    return handleResize;
+}

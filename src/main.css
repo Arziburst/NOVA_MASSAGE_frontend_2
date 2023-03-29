@@ -14,6 +14,7 @@
 @import './components/slider/index.css';
 @import './components/input/index.css';
 @import './components/anchor/index.css';
+@import './components/showButtonIfBug/index.css';
 
 /* Sections */
 @import './sections/first/index.css';
@@ -63,4 +64,8 @@ body {
     .block--normalize_height_relative_to_header {
         min-height: calc(100vh - var(--height_header_lg));
     }
+}
+
+.t {
+    border: 1px solid red;
 }

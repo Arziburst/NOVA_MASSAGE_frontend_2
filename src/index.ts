@@ -3,7 +3,7 @@ import './assets/images/photo_master.png';
 import './assets/images/map.png';
 import './assets/images/successful_request.png';
 
-// Functions
+// Elements
 import { burgerMenu } from './elements/burgerMenu/index';
 
 // Components
@@ -26,6 +26,7 @@ import {
     ukraine,
     defaultURL,
     ls,
+    setViewportProperty,
 } from './utils';
 
 // Styles
@@ -130,7 +131,10 @@ const start = () => {
     }
 };
 
+window.addEventListener('resize', setViewportProperty(document.documentElement));
+
 start();
+
 burgerMenu();
 header();
 anchors();

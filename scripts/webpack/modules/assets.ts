@@ -12,7 +12,7 @@ export const connectHtml = (): Configuration => ({
     plugins: [
         new HtmlWebpackPlugin({
             template: `${SOURCE_DIRECTORY}/index.handlebars`,
-            title:    APP_NAME,
+            title:    process.env.APP_NAME || APP_NAME,
             favicon:  `${SOURCE_DIRECTORY}/favicon.ico`,
         }),
     ],

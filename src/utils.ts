@@ -136,8 +136,9 @@ export const getValueFromCssVariables = (value: string) => Number(getComputedSty
     .replace('px', ''));
 
 export function setViewportProperty(doc: HTMLElement) {
-    let prevClientHeight: number = 0;
     const customVar = '--vh';
+    let prevClientHeight: number = 0;
+
     function handleResize() {
         const clientHeight = doc.clientHeight;
         if (clientHeight === prevClientHeight) {

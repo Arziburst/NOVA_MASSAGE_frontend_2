@@ -4,7 +4,7 @@
 .third_section__text {
     top: calc(100vh / 2);
     position: sticky;
-    @apply text-center text-[50px] font-mabryPro font-light text-secondary
+    @apply text-center text-[50px] font-light text-secondary
     lg:text-[100px];
 }
 

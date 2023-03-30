@@ -1,8 +1,8 @@
 export const languagesForBlocks: any = {
     show_button_if_bug: {
         title: {
-            ru: 'Начните ваш просмотр',
-            en: 'Start your view',
+            ru: 'Начните ваш просмотр корректно',
+            en: 'Start your browsing right',
         },
         button: {
             ru: 'Начать',

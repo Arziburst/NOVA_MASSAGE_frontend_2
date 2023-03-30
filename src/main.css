@@ -65,7 +65,3 @@ body {
         min-height: calc(100vh - var(--height_header_lg));
     }
 }
-
-.t {
-    border: 1px solid red;
-}

@@ -17,7 +17,7 @@ export const changeHeightFirstSection = () => {
 
     const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 
-    firstSection.style.minHeight = `calc(var(--vh, 200vh) - ${header.clientHeight}px)`;
+    firstSection.style.minHeight = `calc(var(--vh, 100vh) - ${header.clientHeight}px)`;
 
     // todo remove comments
     // alert(`

@@ -32,7 +32,16 @@ import {
 // Styles
 import './main.css';
 
-export const storeViewport = { value: [ document.documentElement.clientHeight, window.innerHeight ]};
+// Types
+type StoreViewport = {
+    value: number[]
+    orientation: null | boolean
+}
+
+export const storeViewport: StoreViewport = {
+    value:       [ document.documentElement.clientHeight, window.innerHeight ],
+    orientation: null,
+};
 
 export const makeCurrentLanguageActive = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
@@ -132,8 +141,6 @@ const start = () => {
         changeHeightFirstSection();
     }
 };
-
-// window.addEventListener('resize', showButtonIfBug);
 
 window.addEventListener('resize', setViewportProperty(document.documentElement));
 

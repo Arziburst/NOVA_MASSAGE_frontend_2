@@ -2,6 +2,9 @@
 import { makeCurrentLanguageActive, storeViewport } from './index';
 import { languagesForBlocks } from './languages';
 
+// Constants
+import { heightLandscape, heightPortrait } from './init/constants';
+
 // Sections
 import { changeHeightFirstSection } from './sections/first';
 
@@ -138,19 +141,29 @@ export const getValueFromCssVariables = (value: string) => Number(getComputedSty
 export function setViewportProperty(doc: HTMLElement) {
     const customVar = '--vh';
 
-    window.addEventListener('orientationchange', () => {
-        storeViewport.value = [ doc.clientHeight, window.innerHeight ];
-    });
-
     function handleResize() {
-        showButtonIfBug();
+        const orientationIsPortrait = window.matchMedia('(orientation: portrait)').matches;
+
+        showButtonIfBug(orientationIsPortrait);
+
+        if (orientationIsPortrait !== storeViewport.orientation) {
+            storeViewport.orientation = orientationIsPortrait as boolean;
+            storeViewport.value = [ doc.clientHeight, window.innerHeight ];
+        }
 
         requestAnimationFrame(function updateViewportHeight() {
             storeViewport.value.push(doc.clientHeight);
 
             const smallest = Math.min(...storeViewport.value);
 
+
             doc.style.setProperty(customVar, smallest + 'px');
+
+            if (orientationIsPortrait) {
+                localStorage.setItem(heightPortrait, String(smallest));
+            } else {
+                localStorage.setItem(heightLandscape, String(smallest));
+            }
         });
     }
     handleResize();

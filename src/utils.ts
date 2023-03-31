@@ -148,14 +148,22 @@ export function setViewportProperty(doc: HTMLElement) {
 
         if (orientationIsPortrait !== storeViewport.orientation) {
             storeViewport.orientation = orientationIsPortrait as boolean;
-            storeViewport.value = [ doc.clientHeight, window.innerHeight ];
+
+            const heights = [ doc.clientHeight, window.innerHeight ];
+
+            const height
+            = orientationIsPortrait ? localStorage.getItem(heightPortrait) : localStorage.getItem(heightLandscape);
+
+            if (height) {
+                storeViewport.value = [ ...heights, Number(height) ];
+            }
+            storeViewport.value = [ ...heights ];
         }
 
         requestAnimationFrame(function updateViewportHeight() {
             storeViewport.value.push(doc.clientHeight);
 
             const smallest = Math.min(...storeViewport.value);
-
 
             doc.style.setProperty(customVar, smallest + 'px');
 

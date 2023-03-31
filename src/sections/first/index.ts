@@ -22,9 +22,9 @@ export const changeHeightFirstSection = () => {
     if (turnOver !== mql.matches) {
         turnOver = mql.matches;
 
-        if (mql.matches === false && window.innerHeight < 350) { // landscape.innerHeight && window < 350px
+        if (mql.matches === false && window.innerHeight < 350) { // landscape && window.innerHeight < 350px
             firstSectionCard.style.height =  `calc(var(--vh, 100vh) - ${header.clientHeight - 20}px)`;
-        } else if (mql.matches === false && window.innerHeight < 640) { // landscape.innerHeight && window < 640px
+        } else if (mql.matches === false && window.innerHeight < 640) { // landscape && window.innerHeight < 640px
             firstSectionCard.style.height =  'calc(var(--vh, 100vh) - var(--height_header) - 20px)';
             firstSection.style.height =  'auto';
         } else if (mql.matches === true && window.innerWidth < 1280) { // portrait && window.innerWidth < 1280

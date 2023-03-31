@@ -1,6 +1,6 @@
 // Commons
+import { makeCurrentLanguageActive, storeViewport } from './index';
 import { languagesForBlocks } from './languages';
-import { makeCurrentLanguageActive } from './index';
 
 // Sections
 import { changeHeightFirstSection } from './sections/first';
@@ -137,17 +137,20 @@ export const getValueFromCssVariables = (value: string) => Number(getComputedSty
 
 export function setViewportProperty(doc: HTMLElement) {
     const customVar = '--vh';
-    let prevClientHeight: number = 0;
+
+    window.addEventListener('orientationchange', () => {
+        storeViewport.value = [ doc.clientHeight, window.innerHeight ];
+    });
 
     function handleResize() {
-        const clientHeight = doc.clientHeight;
-        if (clientHeight === prevClientHeight) {
-            return;
-        }
+        showButtonIfBug();
+
         requestAnimationFrame(function updateViewportHeight() {
-            showButtonIfBug();
-            doc.style.setProperty(customVar, clientHeight + 'px');
-            prevClientHeight = clientHeight;
+            storeViewport.value.push(doc.clientHeight);
+
+            const smallest = Math.min(...storeViewport.value);
+
+            doc.style.setProperty(customVar, smallest + 'px');
         });
     }
     handleResize();

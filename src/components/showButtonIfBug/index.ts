@@ -3,6 +3,7 @@ export const showButtonIfBug = () => {
     const screenAvailHeight = screen.availHeight;
 
     const blockShowButtonIfBug = document.querySelector('.show_button_if_bug');
+
     if (!blockShowButtonIfBug) {
         return;
     }

@@ -32,6 +32,8 @@ import {
 // Styles
 import './main.css';
 
+export const storeViewport = { value: [ document.documentElement.clientHeight, window.innerHeight ]};
+
 export const makeCurrentLanguageActive = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
     const countryFromLocalStorage = ls.get();
@@ -130,6 +132,8 @@ const start = () => {
         changeHeightFirstSection();
     }
 };
+
+// window.addEventListener('resize', showButtonIfBug);
 
 window.addEventListener('resize', setViewportProperty(document.documentElement));
 

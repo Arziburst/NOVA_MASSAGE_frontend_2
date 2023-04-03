@@ -3,7 +3,7 @@ import './assets/images/photo_master.png';
 import './assets/images/map.png';
 import './assets/images/successful_request.png';
 
-// Functions
+// Elements
 import { burgerMenu } from './elements/burgerMenu/index';
 
 // Components
@@ -26,10 +26,22 @@ import {
     ukraine,
     defaultURL,
     ls,
+    setViewportProperty,
 } from './utils';
 
 // Styles
 import './main.css';
+
+// Types
+type StoreViewport = {
+    value: number[]
+    orientation: null | boolean
+}
+
+export const storeViewport: StoreViewport = {
+    value:       [ document.documentElement.clientHeight, window.innerHeight ],
+    orientation: null,
+};
 
 export const makeCurrentLanguageActive = () => {
     const buttonsForChangingLanguage = document.querySelectorAll<HTMLButtonElement>('.button_change_language');
@@ -130,7 +142,10 @@ const start = () => {
     }
 };
 
+window.addEventListener('resize', setViewportProperty(document.documentElement));
+
 start();
+
 burgerMenu();
 header();
 anchors();

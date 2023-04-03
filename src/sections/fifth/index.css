@@ -129,18 +129,8 @@
     cursor-pointer;
 }
 
-.contact_info_body__text--hover::before {
-    @apply bg-primary-300;
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 0%;
-    height: 1px;
-    transition: width 0.3s;
-}
-.contact_info_body__text--hover:hover::before {
-    width: 100%;
+.contact_info_body__text--hover:hover {
+    @apply underline underline-offset-1;
 }
 
 .contact_locate {

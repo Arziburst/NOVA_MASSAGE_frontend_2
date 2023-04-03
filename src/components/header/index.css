@@ -5,7 +5,7 @@
 
 .header {
     @apply z-50 top-0 py-5 bg-tertiary-100;
-    transition: all 1s;
+    transition: top 1s;
     top: -100px;
 }
 

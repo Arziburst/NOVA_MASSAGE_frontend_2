@@ -1,9 +1,16 @@
-import { changeValueNavSelectedLanguage } from './components/nav';
+// Commons
+import { makeCurrentLanguageActive, storeViewport } from './index';
 import { languagesForBlocks } from './languages';
 
-import { makeCurrentLanguageActive } from './index';
+// Constants
+import { heightLandscape, heightPortrait } from './init/constants';
 
+// Sections
 import { changeHeightFirstSection } from './sections/first';
+
+// Components
+import { changeValueNavSelectedLanguage } from './components/nav';
+import { showButtonIfBug } from './components/showButtonIfBug';
 
 export const defaultURL = '';
 export const ukraine = 'ua';
@@ -126,3 +133,48 @@ export const changeURL = (value: string) => {
     }
     history.pushState(null, '', `/${value}`);
 };
+
+export const getValueFromCssVariables = (value: string) => Number(getComputedStyle(document.documentElement)
+    .getPropertyValue(`--${value}`)
+    .replace('px', ''));
+
+export function setViewportProperty(doc: HTMLElement) {
+    const customVar = '--vh';
+
+    function handleResize() {
+        const orientationIsPortrait = window.matchMedia('(orientation: portrait)').matches;
+
+        showButtonIfBug(orientationIsPortrait);
+
+        if (orientationIsPortrait !== storeViewport.orientation) {
+            storeViewport.orientation = orientationIsPortrait as boolean;
+
+            const heights = [ doc.clientHeight, window.innerHeight ];
+
+            const height
+            = orientationIsPortrait ? localStorage.getItem(heightPortrait) : localStorage.getItem(heightLandscape);
+
+            if (height) {
+                storeViewport.value = [ ...heights, Number(height) ];
+            }
+            storeViewport.value = [ ...heights ];
+        }
+
+        requestAnimationFrame(function updateViewportHeight() {
+            storeViewport.value.push(doc.clientHeight);
+
+            const smallest = Math.min(...storeViewport.value);
+
+            doc.style.setProperty(customVar, smallest + 'px');
+
+            if (orientationIsPortrait) {
+                localStorage.setItem(heightPortrait, String(smallest));
+            } else {
+                localStorage.setItem(heightLandscape, String(smallest));
+            }
+        });
+    }
+    handleResize();
+
+    return handleResize;
+}

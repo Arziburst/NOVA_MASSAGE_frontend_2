@@ -257,6 +257,10 @@ export const languagesForBlocks: any = {
             ru: 'отправить сообщение',
             en: 'send message',
         },
+        success_img: {
+            ru: 'Изображение успеха',
+            en: 'Image of success',
+        },
         success_message: {
             ru: 'Ваша заявка была принята в обработку, мы свяжемся с вами в ближайшее время',
             en: 'Your application has been accepted for processing, we will contact you shortly',

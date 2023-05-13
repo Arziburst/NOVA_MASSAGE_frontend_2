@@ -130,9 +130,13 @@ export const changeURL = (value: string) => {
     history.pushState(null, '', `/${value}`);
 };
 
-export const getValueFromCssVariables = (value: string) => Number(getComputedStyle(document.documentElement)
-    .getPropertyValue(`--${value}`)
-    .replace('px', ''));
+export const getValueFromCssVariables = (value: string) => {
+    const result = Number(getComputedStyle(document.documentElement)
+        .getPropertyValue(`--${value}`)
+        .replace('px', ''));
+
+    return result;
+};
 
 export function setViewportProperty(doc: HTMLElement) {
     const customVar = '--vh';

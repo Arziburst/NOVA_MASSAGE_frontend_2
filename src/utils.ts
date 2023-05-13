@@ -2,15 +2,11 @@
 import { makeCurrentLanguageActive, storeViewport } from './index';
 import { languagesForBlocks } from './languages';
 
-// Constants
-import { heightLandscape, heightPortrait } from './init/constants';
-
 // Sections
 import { changeHeightFirstSection } from './sections/first';
 
 // Components
 import { changeValueNavSelectedLanguage } from './components/nav';
-import { showButtonIfBug } from './components/showButtonIfBug';
 
 export const defaultURL = '';
 export const ukraine = 'ua';
@@ -144,19 +140,11 @@ export function setViewportProperty(doc: HTMLElement) {
     function handleResize() {
         const orientationIsPortrait = window.matchMedia('(orientation: portrait)').matches;
 
-        showButtonIfBug(orientationIsPortrait);
-
         if (orientationIsPortrait !== storeViewport.orientation) {
             storeViewport.orientation = orientationIsPortrait as boolean;
 
             const heights = [ doc.clientHeight, window.innerHeight ];
 
-            const height
-            = orientationIsPortrait ? localStorage.getItem(heightPortrait) : localStorage.getItem(heightLandscape);
-
-            if (height) {
-                storeViewport.value = [ ...heights, Number(height) ];
-            }
             storeViewport.value = [ ...heights ];
         }
 
@@ -166,12 +154,6 @@ export function setViewportProperty(doc: HTMLElement) {
             const smallest = Math.min(...storeViewport.value);
 
             doc.style.setProperty(customVar, smallest + 'px');
-
-            if (orientationIsPortrait) {
-                localStorage.setItem(heightPortrait, String(smallest));
-            } else {
-                localStorage.setItem(heightLandscape, String(smallest));
-            }
         });
     }
     handleResize();

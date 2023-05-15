@@ -16,12 +16,16 @@
                 type='text' props='required' classLabel='lng_fifth_section_label_2'
                 placeholder='+380 11 111 11 11'}}
 
+                {{> '../../components/input/index' id='input_date_pick' name='date' label='Дата'
+                type='text' classLabel='lng_fifth_section_label_3' classInput='lng_fifth_section_input_3'
+                placeholder='Виберіть дату...'}}
+
                 <div class="input">
-                    <label class="lng_fifth_section_label_3 input__label" for="input_description">
+                    <label class="lng_fifth_section_label_4 input__label" for="input_description">
                         Поставте запитання або оформіть заявку
                     </label>
                     <div class="input_wrapper">
-                        <textarea class="lng_fifth_section_input_3 input__textarea" id="input_description"
+                        <textarea class="lng_fifth_section_input_4 input__textarea" id="input_description"
                             name="question" placeholder="Тут Ви можете залишити запитання чи коментар"></textarea>
                         <button class="input_button hidden top-[20px] right-[20px]">
                             {{> '../../elements/svgClose/index' class='input_button__close'}}

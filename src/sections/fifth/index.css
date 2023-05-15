@@ -161,6 +161,48 @@
     @apply scale-125;
 }
 
+/* flatpickr-calendar */
+/* Select === months */
+.flatpickr-calendar .flatpickr-monthDropdown-months {
+    @apply hover:bg-quinary-100 hover:text-primary-300;
+}
+.flatpickr-calendar .numInputWrapper, .flatpickr-calendar .numInput, .flatpickr-calendar .flatpickr-am-pm {
+    @apply hover:bg-quinary-100 hover:text-primary-300
+    focus:bg-quinary-100 focus:text-primary-300;
+}
+
+/* Cells day */
+.flatpickr-calendar .flatpickr-day.today {
+    @apply border-primary-100
+}
+
+.flatpickr-calendar .flatpickr-day {
+    @apply hover:bg-quinary-100 hover:text-primary-300
+}
+
+.flatpickr-calendar .flatpickr-day.selected {
+    @apply bg-primary-100 border-primary-100
+    hover:text-[white];
+}
+.flatpickr-calendar .flatpickr-prev-month:hover svg, .flatpickr-calendar .flatpickr-next-month:hover svg {
+    @apply fill-primary-100;
+}
+
+/* Buttons arrow */
+.flatpickr-calendar span[class='arrowUp'], .flatpickr-calendar span[class='arrowDown'] {
+    opacity: 1;
+}
+
+.flatpickr-calendar .flatpickr-time .numInputWrapper .arrowUp, .flatpickr-calendar .flatpickr-time .numInputWrapper .arrowDown {
+    width: 20px;
+    padding: 0px;
+}
+.flatpickr-calendar .flatpickr-time .numInputWrapper .arrowUp::after, .flatpickr-calendar .flatpickr-time .numInputWrapper .arrowDown::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+
 @media (min-width: 640px) {
     .fifth_section_body_second {
         grid-template-columns: 1fr 1fr;

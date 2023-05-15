@@ -27,6 +27,7 @@ import {
     defaultURL,
     ls,
     setViewportProperty,
+    changeLanguageCalendar,
 } from './utils';
 
 // Styles
@@ -79,7 +80,6 @@ const start = () => {
     const navDropdown = document.querySelector('.burger_menu__dropdown');
     const burgerMenuIcon = document.querySelector('#burger_menu__icon');
 
-
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
     const countryFromLocalStorage = ls.get();
@@ -117,6 +117,7 @@ const start = () => {
 
     if (countryFromLocalStorage !== null && countryFromLocalStorage === ukraine) {
         history.pushState(null, '', `/${defaultURL}`);
+        changeLanguageCalendar();
 
         return;
     }
@@ -127,6 +128,7 @@ const start = () => {
         changeValueNavSelectedLanguage();
 
         changeHeightFirstSection();
+
 
         return;
     }

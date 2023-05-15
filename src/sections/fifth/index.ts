@@ -1,12 +1,15 @@
+// Core
+import flatpickr from 'flatpickr';
+
+// Tools
+import { getTimeDifference, isFormBlockedHandler, toggleHTMLElementsDisabledState } from './utils';
+import { WHEN_REQUEST_WAS_SENT } from '../../init/constants';
+
 // Map
 import { watcherClickMap } from './map';
 
 // Types
 import { CollectAllValuesOfFormTypes, InputsOfForm } from './types';
-
-// Tools
-import { getTimeDifference, isFormBlockedHandler, toggleHTMLElementsDisabledState } from './utils';
-import { WHEN_REQUEST_WAS_SENT } from '../../init/constants';
 
 const form = document.querySelector<HTMLFormElement>('#form');
 
@@ -103,6 +106,12 @@ const checkIsTimeSubmitRequestOfForm = () => {
     }
 };
 
+export const flatpickrDatePick: any = flatpickr('#input_date_pick', {
+    enableTime:    true,
+    dateFormat:    'Y-m-d H:i',
+    disableMobile: true,
+});
+
 export const fifth = () => {
     checkIsTimeSubmitRequestOfForm();
     watcherClickMap();
@@ -125,6 +134,7 @@ export const fifth = () => {
             const buttonForClearingInput = inputWrapper.querySelector('.input_button');
 
             const input = inputHTMLElement || textareaHTMLElement;
+
             if (!(input && buttonForClearingInput)) {
                 return;
             }

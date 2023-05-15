@@ -1,3 +1,6 @@
+/* Core */
+@import '../node_modules/flatpickr/dist/flatpickr.min.css';
+
 /* Fonts */
 @import './assets/fonts.css';
 

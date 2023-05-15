@@ -1,3 +1,8 @@
+// Core
+import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
+import { english } from 'flatpickr/dist/l10n/default';
+import { Russian } from 'flatpickr/dist/l10n/ru.js';
+
 // Commons
 import { makeCurrentLanguageActive, storeViewport } from './index';
 import { languagesForBlocks } from './languages';
@@ -7,11 +12,13 @@ import { changeHeightFirstSection } from './sections/first';
 
 // Components
 import { changeValueNavSelectedLanguage } from './components/nav';
+import { flatpickrDatePick } from './sections/fifth';
 
 export const defaultURL = '';
 export const ukraine = 'ua';
+export const russia = 'ru';
 
-export const allURL = [ defaultURL, 'ru', 'en' ];
+export const allURL = [ defaultURL, russia, 'en' ];
 
 export const languages = [ ukraine, 'ru', 'en' ];
 
@@ -20,6 +27,18 @@ export const countriesSNG = [ 'Russia', 'Armenia', 'Azerbaijan', 'Belarus', 'Kaz
 export const ls = {
     set: (value: string) => localStorage.setItem('isVisited', value),
     get: (value: string = 'isVisited') => localStorage.getItem(value),
+};
+
+export const changeLanguageCalendar = () => {
+    const pathPathname = window.location.pathname.replace(/\//g, '');
+
+    if (pathPathname === defaultURL) {
+        flatpickrDatePick.set('locale', Ukrainian);
+    } else if (pathPathname === russia) {
+        flatpickrDatePick.set('locale', Russian);
+    } else {
+        flatpickrDatePick.set('locale', english);
+    }
 };
 
 export const changeLanguageOnPage = () => {
@@ -35,6 +54,8 @@ export const changeLanguageOnPage = () => {
 
         return;
     }
+
+    changeLanguageCalendar();
 
     makeCurrentLanguageActive();
 
@@ -91,6 +112,7 @@ export const checkCountryAndChangeURL = () => {
                     if (yourCountryName === 'Ukraine') {
                         history.pushState(null, '', `/${defaultURL}`);
                         changeValueNavSelectedLanguage();
+                        changeLanguageCalendar();
 
                         return;
                     }

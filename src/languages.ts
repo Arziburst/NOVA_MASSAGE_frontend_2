@@ -236,10 +236,18 @@ export const languagesForBlocks: any = {
             en: 'What’s your phone number?',
         },
         label_3: {
+            ru: 'Дата',
+            en: 'Date',
+        },
+        input_3: {
+            ru: 'Выберите дату...',
+            en: 'Select date...',
+        },
+        label_4: {
             ru: 'Задайте вопрос или оформите заявку',
             en: 'Message',
         },
-        input_3: {
+        input_4: {
             ru: 'Здесь Вы можете оставить вопрос или комментарий',
             en: 'Here you can leave a question or comment',
         },
